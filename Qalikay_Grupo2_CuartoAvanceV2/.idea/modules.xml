@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Qalikay_Grupo2_PrimerAvance.iml" filepath="$PROJECT_DIR$/.idea/Qalikay_Grupo2_PrimerAvance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qalikay/qalikay.iml" filepath="$PROJECT_DIR$/qalikay/qalikay.iml" />
+    </modules>
+  </component>
+</project>
