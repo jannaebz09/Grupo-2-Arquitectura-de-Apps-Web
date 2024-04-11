@@ -21,6 +21,12 @@ public class User_RoleController {
         User_Role us=m.map(s, User_Role.class);
         sS.insert(us);
     }
+    @PutMapping
+    public void modificar(@RequestBody User_RoleDTO s){
+        ModelMapper m=new ModelMapper();
+        User_Role us=m.map(s, User_Role.class);
+        sS.insert(us);
+    }
     @GetMapping
     public List<User_RoleDTO> list(){
 

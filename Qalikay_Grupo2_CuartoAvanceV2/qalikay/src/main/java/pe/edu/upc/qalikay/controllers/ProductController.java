@@ -25,6 +25,12 @@ public class ProductController {
         Product sh=m.map(s, Product.class);
         sS.insert(sh);
     }
+    @PutMapping
+    public void modificar(@RequestBody ProductDTO s){
+        ModelMapper m=new ModelMapper();
+        Product sh=m.map(s, Product.class);
+        sS.insert(sh);
+    }
     @GetMapping
     public List<ProductDTO> list (){
         return sS.list().stream().map(y->{

@@ -21,6 +21,12 @@ public class ExpCertificateController {
         ExpCertificate ex=m.map(s,ExpCertificate.class);
         sS.insert(ex);
     }
+    @PutMapping
+    public void modificar(@RequestBody ExpCertificateDTO s){
+        ModelMapper m=new ModelMapper();
+        ExpCertificate ex=m.map(s,ExpCertificate.class);
+        sS.insert(ex);
+    }
     @GetMapping
     public List<ExpCertificateDTO> list(){
 

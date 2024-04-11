@@ -25,6 +25,12 @@ public class Sp_RecipeController {
         Sp_recipe sh=m.map(s, Sp_recipe.class);
         sS.insert(sh);
     }
+    @PutMapping
+    public void modificar (@RequestBody Sp_recipeDTO s){
+        ModelMapper m=new ModelMapper();
+        Sp_recipe sh=m.map(s, Sp_recipe.class);
+        sS.insert(sh);
+    }
     @GetMapping
     public List<Sp_recipeDTO> list (){
         return sS.list().stream().map(y->{

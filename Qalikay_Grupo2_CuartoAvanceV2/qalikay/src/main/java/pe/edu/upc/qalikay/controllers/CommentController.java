@@ -21,6 +21,12 @@ public class CommentController {
         Comment co=m.map(s,Comment.class);
         sS.insert(co);
     }
+    @PutMapping
+    public void modificar(@RequestBody CommentDTO s){
+        ModelMapper m=new ModelMapper();
+        Comment co=m.map(s,Comment.class);
+        sS.insert(co);
+    }
     @GetMapping
     public List<CommentDTO> list(){
 
