@@ -10,4 +10,5 @@ public interface ICommentService {
 
     public void delete(int id);
     public Comment listId(int id);
+    public List<String[]> averageByUser();
 }

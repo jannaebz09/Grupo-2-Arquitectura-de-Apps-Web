@@ -30,4 +30,9 @@ public class CommentServiceImplement implements ICommentService {
     public Comment listId(int id) {
         return sR.findById(id).orElse(new Comment());
     }
+
+    @Override
+    public List<String[]> averageByUser() {
+        return sR.averageByUser();
+    }
 }

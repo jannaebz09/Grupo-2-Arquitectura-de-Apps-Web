@@ -34,4 +34,9 @@ public class ProductServiceImplement implements IProductService {
     public Product listId(int id) {
         return sR.findById(id).orElse(new Product());
     }
+
+    @Override
+    public List<Product> findByNameProduct(String nombre) {
+        return sR.findByNameProduct(nombre);
+    }
 }
