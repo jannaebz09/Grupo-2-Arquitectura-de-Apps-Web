@@ -4,9 +4,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.CommentDTO;
+import pe.edu.upc.qalikay.dtos.QualificationAverageByUserDTO;
+import pe.edu.upc.qalikay.dtos.SaleByUserDTO;
 import pe.edu.upc.qalikay.entities.Comment;
 import pe.edu.upc.qalikay.servicesinterfaces.ICommentService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,5 +47,17 @@ public class CommentController {
         ModelMapper m= new ModelMapper();
         CommentDTO dto=m.map(sS.listId(id),CommentDTO.class);
         return dto;
+    }
+    @GetMapping("/promedio")
+    public List<QualificationAverageByUserDTO> promedioCalificacion(){
+        List<String[]> filaLista=sS.averageByUser();
+        List<QualificationAverageByUserDTO> dtoLista=new ArrayList<>();
+        for(String[] columna:filaLista){
+            QualificationAverageByUserDTO dto=new QualificationAverageByUserDTO();
+            dto.setFullName(columna[0]);
+            dto.setAverage(Double.parseDouble(columna[1]));
+            dtoLista.add(dto);
+        }
+        return dtoLista;
     }
 }

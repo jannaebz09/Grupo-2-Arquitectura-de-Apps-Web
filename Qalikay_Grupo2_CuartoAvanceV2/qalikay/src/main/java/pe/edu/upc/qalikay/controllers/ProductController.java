@@ -48,4 +48,12 @@ public class ProductController {
         ProductDTO dto=m.map(sS.listId(id),ProductDTO.class);
         return dto;
     }
+    @GetMapping("/buscar")
+    public List<ProductDTO> buscarModelo(@RequestParam String nombre){
+
+        return sS.findByNameProduct(nombre).stream().map(y->{
+            ModelMapper m=new ModelMapper();
+            return m.map(y,ProductDTO.class);
+        }).collect(Collectors.toList());
+    }
 }
