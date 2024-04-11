@@ -25,6 +25,12 @@ public class OptionPayController {
         OptionPay sh=m.map(s, OptionPay.class);
         sS.insert(sh);
     }
+    @PutMapping
+    public void modificar(@RequestBody OptionPayDTO s){
+        ModelMapper m=new ModelMapper();
+        OptionPay sh=m.map(s, OptionPay.class);
+        sS.insert(sh);
+    }
     @GetMapping
     public List<OptionPayDTO> list (){
         return sS.list().stream().map(y->{

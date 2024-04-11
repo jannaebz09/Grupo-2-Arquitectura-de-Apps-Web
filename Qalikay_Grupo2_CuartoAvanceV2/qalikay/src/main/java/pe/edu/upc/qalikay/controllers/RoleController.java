@@ -25,6 +25,12 @@ public class RoleController {
         Role sh=m.map(s, Role.class);
         sS.insert(sh);
     }
+    @PutMapping
+    public void modificar(@RequestBody Role s){
+        ModelMapper m=new ModelMapper();
+        Role sh=m.map(s, Role.class);
+        sS.insert(sh);
+    }
     @GetMapping
     public List<RoleDTO> listRole (){
         return sS.list().stream().map(y->{

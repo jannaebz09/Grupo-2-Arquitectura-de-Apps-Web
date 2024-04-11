@@ -31,4 +31,9 @@ public class SaleServiceImplement implements ISaleService {
     public Sale listId(int id) {
         return sR.findById(id).orElse(new Sale());
     }
+
+    @Override
+    public List<String[]> quantitySaleByUser() {
+        return sR.quantitySaleByUser();
+    }
 }

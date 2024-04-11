@@ -24,6 +24,12 @@ public class UserController {
         User sh=m.map(s, User.class);
         sS.insert(sh);
     }
+    @PutMapping
+    public void modificar (@RequestBody UserDTO s) {
+        ModelMapper m=new ModelMapper();
+        User sh=m.map(s, User.class);
+        sS.insert(sh);
+    }
     @GetMapping
     public List<UserDTO> list(){
         return sS.list().stream().map(y->{

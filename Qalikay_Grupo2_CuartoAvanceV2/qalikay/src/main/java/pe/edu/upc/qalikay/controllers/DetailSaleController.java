@@ -26,6 +26,12 @@ public class DetailSaleController {
         DetailSale sh=m.map(s, DetailSale.class);
         sS.insert(sh);
     }
+    @PutMapping
+    public void modificar(@RequestBody DetailSaleDTO s){
+        ModelMapper m=new ModelMapper();
+        DetailSale sh=m.map(s, DetailSale.class);
+        sS.insert(sh);
+    }
     @GetMapping
     public List<DetailSaleDTO> list (){
         return sS.list().stream().map(y->{
