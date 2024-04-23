@@ -11,5 +11,6 @@ public interface IProductService {
     public void delete(int id);
     public Product listId(int id);
     public List<Product> findByNameProduct(String nombre);
+    long countTotalProducts();
 
 }

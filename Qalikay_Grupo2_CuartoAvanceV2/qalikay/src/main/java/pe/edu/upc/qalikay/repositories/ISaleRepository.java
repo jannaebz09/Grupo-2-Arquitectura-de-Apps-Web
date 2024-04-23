@@ -14,4 +14,6 @@ public interface ISaleRepository extends JpaRepository<Sale,Integer>{
             "on s.id_user = u.id_user \n " +
             "group by u.full_name ",nativeQuery = true)
     public List<String[]> quantitySaleByUser();
+    @Query(value = "SELECT SUM(s.amount) FROM Sale s" , nativeQuery = true)
+    long sumTotalSales();
 }

@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface IProductRepository extends JpaRepository <Product , Integer > {
     public List<Product> findByNameProduct(String nombre);
+    long count();
 }

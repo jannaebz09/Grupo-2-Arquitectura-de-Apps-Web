@@ -36,4 +36,9 @@ public class SaleServiceImplement implements ISaleService {
     public List<String[]> quantitySaleByUser() {
         return sR.quantitySaleByUser();
     }
+
+    @Override
+    public long sumTotalSales() {
+        return sR.sumTotalSales();
+    }
 }

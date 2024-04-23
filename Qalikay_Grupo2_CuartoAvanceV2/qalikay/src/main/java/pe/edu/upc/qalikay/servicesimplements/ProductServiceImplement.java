@@ -39,4 +39,9 @@ public class ProductServiceImplement implements IProductService {
     public List<Product> findByNameProduct(String nombre) {
         return sR.findByNameProduct(nombre);
     }
+
+    @Override
+    public long countTotalProducts() {
+        return sR.count();
+    }
 }

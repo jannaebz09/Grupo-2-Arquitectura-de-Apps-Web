@@ -56,4 +56,8 @@ public class ProductController {
             return m.map(y,ProductDTO.class);
         }).collect(Collectors.toList());
     }
+    @GetMapping("/cantidadtotal")
+    public long countTotalProducts() {
+        return sS.countTotalProducts();
+    }
 }
