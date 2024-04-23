@@ -62,4 +62,8 @@ public class SaleController {
         }
         return dtoLista;
     }
+    @GetMapping("/sumatotal")
+    public long sumTotalSales(){
+        return sS.sumTotalSales();
+    }
 }
