@@ -35,4 +35,10 @@ public class CommentServiceImplement implements ICommentService {
     public List<String[]> averageByUser() {
         return sR.averageByUser();
     }
+
+    @Override
+    public List<Comment> listacalfmayor3() {
+        return sR.listacalfmayor3();
+    }
+
 }

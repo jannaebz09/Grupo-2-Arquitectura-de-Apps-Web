@@ -48,4 +48,11 @@ public class OptionPayController {
         OptionPayDTO dto=m.map(sS.listId(id),OptionPayDTO.class);
         return dto;
     }
+    @GetMapping("/listarportarjeta")
+    public List<OptionPayDTO> buscarxtarjeta(){
+        return sS.listaxtarjeta().stream().map(x->{
+            ModelMapper m= new ModelMapper();
+            return m.map(x,OptionPayDTO.class);
+        }).collect(Collectors.toList());
+    }
 }
