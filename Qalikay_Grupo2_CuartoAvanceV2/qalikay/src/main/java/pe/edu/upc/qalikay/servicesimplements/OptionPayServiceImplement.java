@@ -34,4 +34,9 @@ public class OptionPayServiceImplement implements IOptionPayService {
     public OptionPay listId(int id) {
         return sR.findById(id).orElse(new OptionPay());
     }
+
+    @Override
+    public List<OptionPay> listaxtarjeta() {
+        return sR.listaxtarjeta();
+    }
 }

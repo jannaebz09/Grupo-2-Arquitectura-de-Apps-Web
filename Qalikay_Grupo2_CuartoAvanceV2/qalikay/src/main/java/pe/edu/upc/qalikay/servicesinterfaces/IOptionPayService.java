@@ -12,4 +12,5 @@ public interface IOptionPayService {
 
     public void delete(int id);
     public OptionPay listId(int id);
+    public List<OptionPay> listaxtarjeta();
 }
