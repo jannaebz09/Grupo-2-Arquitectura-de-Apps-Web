@@ -9,4 +9,6 @@ public interface ISaleService {
     public List<Sale> list();
     public void delete(int id);
     public Sale listId(int id);
+    public List<String[]> quantitySaleByUser();
+    long sumTotalSales();
 }

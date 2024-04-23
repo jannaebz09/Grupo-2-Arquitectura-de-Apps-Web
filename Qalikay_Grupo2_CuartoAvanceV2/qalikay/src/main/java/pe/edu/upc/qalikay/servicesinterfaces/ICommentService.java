@@ -12,4 +12,5 @@ public interface ICommentService {
     public Comment listId(int id);
     public List<String[]> averageByUser();
     public List<Comment> listacalfmayor3();
+
 }

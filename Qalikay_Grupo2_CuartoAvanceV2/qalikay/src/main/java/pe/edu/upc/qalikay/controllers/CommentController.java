@@ -60,6 +60,7 @@ public class CommentController {
         }
         return dtoLista;
     }
+
     @GetMapping("/listaCalificacionmayor3")
     public List<CommentDTO> buscar3() {
         return sS.listacalfmayor3().stream().map(x -> {
@@ -67,4 +68,5 @@ public class CommentController {
             return m.map(x, CommentDTO.class);
         }).collect(Collectors.toList());
     }
+
 }
