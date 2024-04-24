@@ -3,6 +3,7 @@ package pe.edu.upc.qalikay.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.UserDTO;
 import pe.edu.upc.qalikay.entities.User;
@@ -30,6 +31,7 @@ public class UserController {
         User sh=m.map(s, User.class);
         sS.insert(sh);
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public List<UserDTO> list(){
         return sS.list().stream().map(y->{
