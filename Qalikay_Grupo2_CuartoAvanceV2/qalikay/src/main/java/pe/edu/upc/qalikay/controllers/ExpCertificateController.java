@@ -4,9 +4,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.ExpCertificateDTO;
+import pe.edu.upc.qalikay.dtos.QualificationAverageByUserDTO;
+import pe.edu.upc.qalikay.dtos.QuantityUserByInstitutionNameDTO;
 import pe.edu.upc.qalikay.entities.ExpCertificate;
 import pe.edu.upc.qalikay.servicesinterfaces.IExpCertificateService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,5 +47,17 @@ public class ExpCertificateController {
         ModelMapper m= new ModelMapper();
         ExpCertificateDTO dto=m.map(sS.listId(id),ExpCertificateDTO.class);
         return dto;
+    }
+    @GetMapping("/usuariosxinstitucion")
+    public List<QuantityUserByInstitutionNameDTO> cantidadUsuariosPorInstitucion(){
+        List<String[]> filaLista=sS.quantityUserbyInstitutionName();
+        List<QuantityUserByInstitutionNameDTO> dtoLista=new ArrayList<>();
+        for(String[] columna:filaLista){
+            QuantityUserByInstitutionNameDTO dto=new QuantityUserByInstitutionNameDTO();
+            dto.setIntitutionName(columna[0]);
+            dto.setQuantity(Integer.parseInt(columna[1]));
+            dtoLista.add(dto);
+        }
+        return dtoLista;
     }
 }

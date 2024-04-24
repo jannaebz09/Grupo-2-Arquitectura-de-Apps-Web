@@ -6,6 +6,7 @@ import pe.edu.upc.qalikay.entities.Sale;
 import pe.edu.upc.qalikay.repositories.ISaleRepository;
 import pe.edu.upc.qalikay.servicesinterfaces.ISaleService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -40,5 +41,10 @@ public class SaleServiceImplement implements ISaleService {
     @Override
     public long sumTotalSales() {
         return sR.sumTotalSales();
+    }
+
+    @Override
+    public List<Sale> findSalesBySaleDateEquals(LocalDate date) {
+        return sR.findSalesBySaleDateEquals(date);
     }
 }

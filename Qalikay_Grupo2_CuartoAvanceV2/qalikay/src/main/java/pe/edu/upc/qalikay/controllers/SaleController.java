@@ -11,6 +11,7 @@ import pe.edu.upc.qalikay.entities.Sale;
 
 import pe.edu.upc.qalikay.servicesinterfaces.ISaleService;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -65,5 +66,13 @@ public class SaleController {
     @GetMapping("/sumatotal")
     public long sumTotalSales(){
         return sS.sumTotalSales();
+    }
+
+    @GetMapping("/buscarventaporfecha")
+    public List<SaleDTO> buscarventaporfecha(@RequestParam LocalDate date){
+        return sS.findSalesBySaleDateEquals(date).stream().map(y->{
+            ModelMapper m=new ModelMapper();
+            return m.map(y, SaleDTO.class);
+        }).collect(Collectors.toList());
     }
 }
