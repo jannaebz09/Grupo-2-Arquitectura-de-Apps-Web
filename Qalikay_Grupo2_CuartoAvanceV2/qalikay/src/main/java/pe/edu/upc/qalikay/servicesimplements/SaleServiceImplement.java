@@ -47,4 +47,9 @@ public class SaleServiceImplement implements ISaleService {
     public List<Sale> findSalesBySaleDateEquals(LocalDate date) {
         return sR.findSalesBySaleDateEquals(date);
     }
+
+    @Override
+    public List<Object[]> getUsersWithMostSales(LocalDate Dia_inicial, LocalDate Dia_final) {
+        return sR.findTopUsersWithMostSales(Dia_inicial, Dia_final);
+    }
 }

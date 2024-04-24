@@ -60,4 +60,12 @@ public class ProductController {
     public long countTotalProducts() {
         return sS.countTotalProducts();
     }
+
+    @GetMapping("/RangoPrecio")
+    public List<ProductDTO> getProductsInPriceRange(@RequestParam double Precio_min, @RequestParam double Precio_max) {
+        return sS.getProductsInPriceRange(Precio_min, Precio_max).stream().map(product -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(product, ProductDTO.class);
+        }).collect(Collectors.toList());
+    }
 }

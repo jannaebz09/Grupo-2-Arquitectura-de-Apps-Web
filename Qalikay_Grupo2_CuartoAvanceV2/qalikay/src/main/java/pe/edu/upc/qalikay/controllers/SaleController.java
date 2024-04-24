@@ -3,6 +3,8 @@ package pe.edu.upc.qalikay.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.SaleByUserDTO;
 import pe.edu.upc.qalikay.dtos.SaleDTO;
@@ -12,6 +14,7 @@ import pe.edu.upc.qalikay.entities.Sale;
 import pe.edu.upc.qalikay.servicesinterfaces.ISaleService;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -74,5 +77,14 @@ public class SaleController {
             ModelMapper m=new ModelMapper();
             return m.map(y, SaleDTO.class);
         }).collect(Collectors.toList());
+    }
+
+    @GetMapping("/UsuariosTop")
+    public ResponseEntity<List<Object[]>> getTopUsersWithMostSales(@RequestParam String Dia_inicial, @RequestParam String Dia_final) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate start = LocalDate.parse(Dia_inicial, formatter);
+        LocalDate end = LocalDate.parse(Dia_final, formatter);
+        List<Object[]> topUsers = sS.getUsersWithMostSales(start, end);
+        return new ResponseEntity<>(topUsers, HttpStatus.OK);
     }
 }

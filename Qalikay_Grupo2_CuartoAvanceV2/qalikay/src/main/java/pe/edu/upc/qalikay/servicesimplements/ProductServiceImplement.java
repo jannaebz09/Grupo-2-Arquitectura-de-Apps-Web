@@ -4,7 +4,6 @@ package pe.edu.upc.qalikay.servicesimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.qalikay.entities.Product;
-import pe.edu.upc.qalikay.entities.Sale;
 import pe.edu.upc.qalikay.repositories.IProductRepository;
 import pe.edu.upc.qalikay.servicesinterfaces.IProductService;
 
@@ -43,5 +42,10 @@ public class ProductServiceImplement implements IProductService {
     @Override
     public long countTotalProducts() {
         return sR.count();
+    }
+
+    @Override
+    public List<Product> getProductsInPriceRange(double Precio_min, double Precio_max) {
+        return sR.findByAmountProductBetween(Precio_min, Precio_max);
     }
 }

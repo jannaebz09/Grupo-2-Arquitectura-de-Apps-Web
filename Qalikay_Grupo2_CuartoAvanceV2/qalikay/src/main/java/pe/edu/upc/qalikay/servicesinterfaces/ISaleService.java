@@ -13,4 +13,7 @@ public interface ISaleService {
     public List<String[]> quantitySaleByUser();
     long sumTotalSales();
     public List<Sale>findSalesBySaleDateEquals(LocalDate date);
+
+    public List<Object[]> getUsersWithMostSales(LocalDate Dia_inicial, LocalDate Dia_final);
+
 }
