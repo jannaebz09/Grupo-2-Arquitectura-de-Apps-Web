@@ -4,14 +4,18 @@ package pe.edu.upc.qalikay.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Role")
+@Table(name = "Role", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id","rol"})})
 public class Role {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRole;
     @Column(name = "descriptionRole", nullable = false, length = 50)
     private String descriptionRole;
-
+    @ManyToOne
+    @JoinColumn(name = "user_id",nullable = false)
+    private User user;
     public Role (){
 
     }
