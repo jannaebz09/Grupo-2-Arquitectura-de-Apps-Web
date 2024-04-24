@@ -11,4 +11,6 @@ import java.util.List;
 public interface IProductRepository extends JpaRepository <Product , Integer > {
     public List<Product> findByNameProduct(String nombre);
     long count();
+
+    public List<Product> findByAmountProductBetween(double Precio_min, double Precio_max);
 }

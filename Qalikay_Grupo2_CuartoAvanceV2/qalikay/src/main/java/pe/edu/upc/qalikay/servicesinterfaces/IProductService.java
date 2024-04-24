@@ -13,4 +13,5 @@ public interface IProductService {
     public List<Product> findByNameProduct(String nombre);
     long countTotalProducts();
 
+    public List<Product> getProductsInPriceRange(double Precio_min, double Precio_max);
 }
