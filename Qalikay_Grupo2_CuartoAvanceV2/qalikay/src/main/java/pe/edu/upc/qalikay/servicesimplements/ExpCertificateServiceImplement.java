@@ -30,4 +30,9 @@ public class ExpCertificateServiceImplement implements IExpCertificateService {
     public ExpCertificate listId(int id) {
         return sR.findById(id).orElse(new ExpCertificate());
     }
+
+    @Override
+    public List<String[]> quantityUserbyInstitutionName() {
+        return sR.quantityUserbyInstitutionName();
+    }
 }

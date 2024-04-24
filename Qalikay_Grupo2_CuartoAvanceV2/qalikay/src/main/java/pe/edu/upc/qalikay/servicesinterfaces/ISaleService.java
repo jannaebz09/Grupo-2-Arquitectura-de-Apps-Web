@@ -2,6 +2,7 @@ package pe.edu.upc.qalikay.servicesinterfaces;
 
 import pe.edu.upc.qalikay.entities.Sale;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ISaleService {
@@ -11,4 +12,5 @@ public interface ISaleService {
     public Sale listId(int id);
     public List<String[]> quantitySaleByUser();
     long sumTotalSales();
+    public List<Sale>findSalesBySaleDateEquals(LocalDate date);
 }

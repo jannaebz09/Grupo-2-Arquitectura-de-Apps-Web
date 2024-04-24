@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import pe.edu.upc.qalikay.entities.Sale;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -16,4 +17,6 @@ public interface ISaleRepository extends JpaRepository<Sale,Integer>{
     public List<String[]> quantitySaleByUser();
     @Query(value = "SELECT SUM(s.amount) FROM Sale s" , nativeQuery = true)
     long sumTotalSales();
+    public List<Sale>findSalesBySaleDateEquals(LocalDate date);
+
 }

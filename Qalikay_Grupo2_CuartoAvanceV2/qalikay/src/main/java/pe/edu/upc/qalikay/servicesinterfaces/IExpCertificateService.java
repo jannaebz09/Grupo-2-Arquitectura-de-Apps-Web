@@ -11,4 +11,5 @@ public interface IExpCertificateService {
 
     public void delete(int id);
     public ExpCertificate listId(int id);
+    public List <String[]> quantityUserbyInstitutionName();
 }

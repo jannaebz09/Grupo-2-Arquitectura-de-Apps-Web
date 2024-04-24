@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="030d6952-fbe1-46d0-b574-477093fd54be" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/IProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/ProductServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/ProductServiceImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/ExpCertificateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/ExpCertificateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/SaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/ICommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/ICommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/IExpCertificateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/IExpCertificateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/IOptionPayRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/IOptionPayRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/ISaleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/ISaleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/ExpCertificateServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/ExpCertificateServiceImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/SaleServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/SaleServiceImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/IExpCertificateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/IExpCertificateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/ISaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/ISaleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +55,11 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.QalikayApplication.executor": "Run",
-    "git-widget-placeholder": "AlesPiero/1",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/gian_/OneDrive/Escritorio/demoSI63",
+    "last_opened_file_path": "D:/PC/Descargas/Grupo-2-Arquitectura-de-Apps-Web",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,6 +99,7 @@
       <updated>1712807993092</updated>
       <workItem from="1712807994139" duration="6714000" />
       <workItem from="1713847320847" duration="978000" />
+      <workItem from="1713915928169" duration="1891000" />
     </task>
     <servers />
   </component>

@@ -14,4 +14,6 @@ public interface ICommentRepository extends JpaRepository<Comment,Integer> {
             "on c.id_user = u.id_user  \n" +
             "group by u.full_name ",nativeQuery = true)
     public List<String[]> averageByUser();
+    @Query(value = " select * from Comment u where u.qualification > 3", nativeQuery = true)
+    public List<Comment> listacalfmayor3();
 }
