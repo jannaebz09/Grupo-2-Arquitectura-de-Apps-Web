@@ -28,14 +28,14 @@ public class SaleController {
     @PostMapping
     public void registrar(@RequestBody SaleDTO s){
         ModelMapper m=new ModelMapper();
-        Sale sh=m.map(s, Sale.class);
-        sS.insert(sh);
+        Sale sa=m.map(s, Sale.class);
+        sS.insert(sa);
     }
     @PutMapping
     public void modificar(@RequestBody SaleDTO s){
         ModelMapper m=new ModelMapper();
-        Sale sh=m.map(s, Sale.class);
-        sS.insert(sh);
+        Sale sa=m.map(s, Sale.class);
+        sS.insert(sa);
     }
     @GetMapping
     public List<SaleDTO> list (){

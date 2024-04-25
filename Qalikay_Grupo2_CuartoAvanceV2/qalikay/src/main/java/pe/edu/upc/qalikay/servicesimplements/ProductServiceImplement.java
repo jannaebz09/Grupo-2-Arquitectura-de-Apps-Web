@@ -12,40 +12,40 @@ import java.util.List;
 @Service
 public class ProductServiceImplement implements IProductService {
     @Autowired
-    private IProductRepository sR;
+    private IProductRepository pR;
 
     @Override
     public void insert(Product product) {
-        sR.save(product);
+        pR.save(product);
     }
 
     @Override
     public List<Product> list() {
-        return sR.findAll();
+        return pR.findAll();
     }
 
     @Override
     public void delete(int id) {
-        sR.deleteById(id);
+        pR.deleteById(id);
     }
 
     @Override
     public Product listId(int id) {
-        return sR.findById(id).orElse(new Product());
+        return pR.findById(id).orElse(new Product());
     }
 
     @Override
     public List<Product> findByNameProduct(String nombre) {
-        return sR.findByNameProduct(nombre);
+        return pR.findByNameProduct(nombre);
     }
 
     @Override
     public long countTotalProducts() {
-        return sR.count();
+        return pR.count();
     }
 
     @Override
     public List<Product> getProductsInPriceRange(double Precio_min, double Precio_max) {
-        return sR.findByAmountProductBetween(Precio_min, Precio_max);
+        return pR.findByAmountProductBetween(Precio_min, Precio_max);
     }
 }

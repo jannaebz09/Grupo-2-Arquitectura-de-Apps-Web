@@ -22,14 +22,14 @@ public class Sp_RecipeController {
     @PostMapping
     public void registrar (@RequestBody Sp_recipeDTO s){
         ModelMapper m=new ModelMapper();
-        Sp_recipe sh=m.map(s, Sp_recipe.class);
-        sS.insert(sh);
+        Sp_recipe sp=m.map(s, Sp_recipe.class);
+        sS.insert(sp);
     }
     @PutMapping
     public void modificar (@RequestBody Sp_recipeDTO s){
         ModelMapper m=new ModelMapper();
-        Sp_recipe sh=m.map(s, Sp_recipe.class);
-        sS.insert(sh);
+        Sp_recipe sp=m.map(s, Sp_recipe.class);
+        sS.insert(sp);
     }
     @GetMapping
     public List<Sp_recipeDTO> list (){

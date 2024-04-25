@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class SaleDTO {
     private int idSale;
     private LocalDate saleDate;
-    private int amount;
+    private double amount;
     private User user;
     private OptionPay optionPay;
 
@@ -30,11 +30,11 @@ public class SaleDTO {
         this.saleDate = saleDate;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 

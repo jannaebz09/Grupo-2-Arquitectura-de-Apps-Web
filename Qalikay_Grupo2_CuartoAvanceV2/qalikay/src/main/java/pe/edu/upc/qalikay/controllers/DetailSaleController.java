@@ -19,34 +19,34 @@ import java.util.stream.Collectors;
 public class DetailSaleController {
 
     @Autowired
-    public IDetailSaleService sS;
+    public IDetailSaleService dS;
     @PostMapping
     public void registrar(@RequestBody DetailSaleDTO s){
         ModelMapper m=new ModelMapper();
-        DetailSale sh=m.map(s, DetailSale.class);
-        sS.insert(sh);
+        DetailSale de=m.map(s, DetailSale.class);
+        dS.insert(de);
     }
     @PutMapping
     public void modificar(@RequestBody DetailSaleDTO s){
         ModelMapper m=new ModelMapper();
-        DetailSale sh=m.map(s, DetailSale.class);
-        sS.insert(sh);
+        DetailSale de=m.map(s, DetailSale.class);
+        dS.insert(de);
     }
     @GetMapping
     public List<DetailSaleDTO> list (){
-        return sS.list().stream().map(y->{
+        return dS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
             return m.map(y, DetailSaleDTO.class);
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
     public void eliminacionDetalleVenta(@PathVariable("id")Integer id){
-        sS.delete(id);
+        dS.delete(id);
     }
     @GetMapping("/{id}")
     public DetailSaleDTO listadoId(@PathVariable ("id")Integer id){
         ModelMapper m= new ModelMapper();
-        DetailSaleDTO dto=m.map(sS.listId(id),DetailSaleDTO.class);
+        DetailSaleDTO dto=m.map(dS.listId(id),DetailSaleDTO.class);
         return dto;
     }
 }

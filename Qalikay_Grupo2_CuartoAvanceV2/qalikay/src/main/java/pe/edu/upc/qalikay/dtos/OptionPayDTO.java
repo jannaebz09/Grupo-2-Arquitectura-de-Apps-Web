@@ -10,12 +10,6 @@ public class OptionPayDTO {
     private String typeOptionPay;
 
 
-    private double amountOptionPay;
-
-
-    private LocalDate optionPayDate;
-
-
     private String descriptionOptionPay;
 
     public int getIdOptionPay() {
@@ -32,22 +26,6 @@ public class OptionPayDTO {
 
     public void setTypeOptionPay(String typeOptionPay) {
         this.typeOptionPay = typeOptionPay;
-    }
-
-    public double getAmountOptionPay() {
-        return amountOptionPay;
-    }
-
-    public void setAmountOptionPay(double amountOptionPay) {
-        this.amountOptionPay = amountOptionPay;
-    }
-
-    public LocalDate getOptionPayDate() {
-        return optionPayDate;
-    }
-
-    public void setOptionPayDate(LocalDate optionPayDate) {
-        this.optionPayDate = optionPayDate;
     }
 
     public String getDescriptionOptionPay() {

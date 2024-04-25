@@ -13,26 +13,26 @@ import java.util.List;
 @Service
 public class DetailSaleServiceImplement implements IDetailSaleService {
     @Autowired
-    private IDetailSaleRepository sR;
+    private IDetailSaleRepository dR;
 
     @Override
     public void insert(DetailSale detailSale) {
-        sR.save(detailSale);
+        dR.save(detailSale);
     }
 
     @Override
     public List<DetailSale> list() {
-        return sR.findAll();
+        return dR.findAll();
     }
 
     @Override
     public void delete(int id) {
-        sR.deleteById(id);
+        dR.deleteById(id);
 
     }
 
     @Override
     public DetailSale listId(int id) {
-        return sR.findById(id).orElse(new DetailSale());
+        return dR.findById(id).orElse(new DetailSale());
     }
 }

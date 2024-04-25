@@ -14,12 +14,6 @@ public class OptionPay {
     @Column(name = "typeOptionPay", nullable = false, length = 50)
     private String typeOptionPay;
 
-    @Column(name="amountOptionPay", nullable = false )
-    private double amountOptionPay;
-
-    @Column(name="optipnPayDate", nullable = false)
-    private LocalDate optionPayDate;
-
     @Column(name = "descriptionOptionPay", nullable = false, length = 50)
     private String descriptionOptionPay;
 
@@ -27,11 +21,9 @@ public class OptionPay {
 
     }
 
-    public OptionPay(int idOptionPay, String typeOptionPay, double amountOptionPay, LocalDate optionPayDate, String descriptionOptionPay) {
+    public OptionPay(int idOptionPay, String typeOptionPay, String descriptionOptionPay) {
         this.idOptionPay = idOptionPay;
         this.typeOptionPay = typeOptionPay;
-        this.amountOptionPay = amountOptionPay;
-        this.optionPayDate = optionPayDate;
         this.descriptionOptionPay = descriptionOptionPay;
     }
 
@@ -51,22 +43,6 @@ public class OptionPay {
         this.typeOptionPay = typeOptionPay;
     }
 
-    public double getAmountOptionPay() {
-        return amountOptionPay;
-    }
-
-    public void setAmountOptionPay(double amountOptionPay) {
-        this.amountOptionPay = amountOptionPay;
-    }
-
-    public LocalDate getOptionPayDate() {
-        return optionPayDate;
-    }
-
-    public void setOptionPayDate(LocalDate optionPayDate) {
-        this.optionPayDate = optionPayDate;
-    }
-
     public String getDescriptionOptionPay() {
         return descriptionOptionPay;
     }
@@ -75,3 +51,4 @@ public class OptionPay {
         this.descriptionOptionPay = descriptionOptionPay;
     }
 }
+

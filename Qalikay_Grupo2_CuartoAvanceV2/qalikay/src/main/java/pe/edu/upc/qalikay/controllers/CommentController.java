@@ -17,40 +17,40 @@ import java.util.stream.Collectors;
 @RequestMapping("/Comments")
 public class CommentController {
     @Autowired
-    private ICommentService sS;
+    private ICommentService cS;
     @PostMapping
     public void registrar(@RequestBody CommentDTO s){
         ModelMapper m=new ModelMapper();
         Comment co=m.map(s,Comment.class);
-        sS.insert(co);
+        cS.insert(co);
     }
     @PutMapping
     public void modificar(@RequestBody CommentDTO s){
         ModelMapper m=new ModelMapper();
         Comment co=m.map(s,Comment.class);
-        sS.insert(co);
+        cS.insert(co);
     }
     @GetMapping
     public List<CommentDTO> list(){
 
-        return sS.list().stream().map(y->{
+        return cS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
             return m.map(y,CommentDTO.class);
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
-        sS.delete(id);
+        cS.delete(id);
     }
     @GetMapping("/{id}")
     public CommentDTO listarId(@PathVariable("id") Integer id){
         ModelMapper m= new ModelMapper();
-        CommentDTO dto=m.map(sS.listId(id),CommentDTO.class);
+        CommentDTO dto=m.map(cS.listId(id),CommentDTO.class);
         return dto;
     }
     @GetMapping("/promedio")
     public List<QualificationAverageByUserDTO> promedioCalificacion(){
-        List<String[]> filaLista=sS.averageByUser();
+        List<String[]> filaLista=cS.averageByUser();
         List<QualificationAverageByUserDTO> dtoLista=new ArrayList<>();
         for(String[] columna:filaLista){
             QualificationAverageByUserDTO dto=new QualificationAverageByUserDTO();
@@ -63,7 +63,7 @@ public class CommentController {
 
     @GetMapping("/listaCalificacionmayor3")
     public List<CommentDTO> buscar3() {
-        return sS.listacalfmayor3().stream().map(x -> {
+        return cS.listacalfmayor3().stream().map(x -> {
             ModelMapper m = new ModelMapper();
             return m.map(x, CommentDTO.class);
         }).collect(Collectors.toList());

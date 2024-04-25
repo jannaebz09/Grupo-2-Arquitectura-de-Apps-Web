@@ -20,11 +20,12 @@ public class User implements Serializable {
     private String email;
     @Column(name = "password", nullable = false, length = 200)
     private String password;
+    @Column(name = "enabled", nullable = false)
     private Boolean enabled;
     @Column(name = "symptoms", nullable = false, length = 200)
     private String symptoms;
     @Column(name = "verficationExpert", nullable = false)
-    private String verificationExpert;
+    private Boolean verificationExpert;
     @Column(name = "dni", nullable = false)
     private int dni;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -34,7 +35,7 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(int idUser, String userName, String fullName, String email, String password, Boolean enabled, String symptoms, String verificationExpert, int dni, List<Role> roles) {
+    public User(int idUser, String userName, String fullName, String email, String password, Boolean enabled, String symptoms, Boolean verificationExpert, int dni, List<Role> roles) {
         this.idUser = idUser;
         this.userName = userName;
         this.fullName = fullName;
@@ -103,11 +104,11 @@ public class User implements Serializable {
         this.symptoms = symptoms;
     }
 
-    public String getVerificationExpert() {
+    public Boolean getVerificationExpert() {
         return verificationExpert;
     }
 
-    public void setVerificationExpert(String verificationExpert) {
+    public void setVerificationExpert(Boolean verificationExpert) {
         this.verificationExpert = verificationExpert;
     }
 

@@ -15,27 +15,27 @@ import java.util.List;
 public class RoleServiceImplement implements IRoleService {
 
     @Autowired
-    private IRoleRepository sR;
+    private IRoleRepository rR;
 
 
     @Override
     public void insert(Role role) {
-        sR.save(role);
+        rR.save(role);
     }
 
     @Override
     public List<Role> list() {
-        return sR.findAll();
+        return rR.findAll();
     }
 
     @Override
     public void delete(int id) {
-        sR.deleteById(id);
+        rR.deleteById(id);
 
     }
 
     @Override
     public Role listId(int id) {
-        return sR.findById(id).orElse(new Role());
+        return rR.findById(id).orElse(new Role());
     }
 }
