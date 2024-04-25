@@ -9,10 +9,10 @@ import java.util.List;
 
 @Repository
 public interface IExpCertificateRepository extends JpaRepository<ExpCertificate,Integer> {
-    @Query (value = "SELECT ec.intitution_name, COUNT(*) as Cantidad \n" +
+    @Query (value = "SELECT ec.institution_name, COUNT(*) as Cantidad \n" +
             "FROM exp_certificate ec inner join usert u \n" +
             "ON ec.id_user = u.id_user \n" +
-            "GROUP BY ec.intitution_name ",nativeQuery = true)
+            "GROUP BY ec.institution_name ",nativeQuery = true)
     public List <String[]> quantityUserbyInstitutionName();
 
 }

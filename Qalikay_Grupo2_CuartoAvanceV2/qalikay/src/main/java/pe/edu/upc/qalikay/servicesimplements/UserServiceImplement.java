@@ -11,23 +11,23 @@ import java.util.List;
 @Service
 public class UserServiceImplement implements IUserService {
     @Autowired
-    private IUserRepository sR;
+    private IUserRepository uR;
 
     @Override
     public void insert(User user){
-        sR.save(user);}
+        uR.save(user);}
     @Override
     public List<User> list(){
-        return sR.findAll();}
+        return uR.findAll();}
 
     @Override
     public void delete(int id) {
-        sR.deleteById(id);
+        uR.deleteById(id);
 
     }
 
     @Override
     public User listId(int id) {
-        return sR.findById(id).orElse(new User());
+        return uR.findById(id).orElse(new User());
     }
 }

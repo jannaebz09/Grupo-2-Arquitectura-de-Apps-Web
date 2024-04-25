@@ -10,7 +10,7 @@ public class ExpCertificate {
     private int idExpCertificate;
     @Column(name="uniqueCodeCertificate",nullable = false)
     private int uniqueCodeCertificate;
-    @Column(name = "intitutionName",nullable = false,length = 50)
+    @Column(name = "institutionName",nullable = false,length = 50)
     private String institutionName;
     @Column(name = "certificateTitle",nullable = false,length = 25)
     private String certificateTitle;

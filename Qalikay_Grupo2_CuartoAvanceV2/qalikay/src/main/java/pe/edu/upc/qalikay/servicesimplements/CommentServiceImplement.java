@@ -10,35 +10,35 @@ import java.util.List;
 @Service
 public class CommentServiceImplement implements ICommentService {
     @Autowired
-    private ICommentRepository sR;
+    private ICommentRepository cR;
     @Override
     public void insert(Comment comment) {
-        sR.save(comment);
+        cR.save(comment);
     }
 
     @Override
     public List<Comment> list() {
-        return sR.findAll();
+        return cR.findAll();
     }
 
     @Override
     public void delete(int id) {
-        sR.deleteById(id);
+        cR.deleteById(id);
     }
 
     @Override
     public Comment listId(int id) {
-        return sR.findById(id).orElse(new Comment());
+        return cR.findById(id).orElse(new Comment());
     }
 
     @Override
     public List<String[]> averageByUser() {
-        return sR.averageByUser();
+        return cR.averageByUser();
     }
 
     @Override
     public List<Comment> listacalfmayor3() {
-        return sR.listacalfmayor3();
+        return cR.listacalfmayor3();
     }
 
 }

@@ -13,30 +13,30 @@ import java.util.List;
 @Service
 public class OptionPayServiceImplement implements IOptionPayService {
     @Autowired
-    private IOptionPayRepository sR;
+    private IOptionPayRepository oR;
 
     @Override
     public void insert(OptionPay optionpay) {
-        sR.save(optionpay);
+        oR.save(optionpay);
     }
 
     @Override
     public List<OptionPay> list() {
-        return sR.findAll();
+        return oR.findAll();
     }
 
     @Override
     public void delete(int id) {
-        sR.deleteById(id);
+        oR.deleteById(id);
     }
 
     @Override
     public OptionPay listId(int id) {
-        return sR.findById(id).orElse(new OptionPay());
+        return oR.findById(id).orElse(new OptionPay());
     }
 
     @Override
     public List<OptionPay> listaxtarjeta() {
-        return sR.listaxtarjeta();
+        return oR.listaxtarjeta();
     }
 }

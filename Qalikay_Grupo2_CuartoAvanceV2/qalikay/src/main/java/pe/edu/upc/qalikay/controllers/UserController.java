@@ -18,35 +18,35 @@ import java.util.stream.Collectors;
 
 public class UserController {
     @Autowired
-    private IUserService sS;
+    private IUserService uS;
     @PostMapping
     public void registrar (@RequestBody UserDTO s) {
         ModelMapper m=new ModelMapper();
-        User sh=m.map(s, User.class);
-        sS.insert(sh);
+        User us=m.map(s, User.class);
+        uS.insert(us);
     }
     @PutMapping
     public void modificar (@RequestBody UserDTO s) {
         ModelMapper m=new ModelMapper();
-        User sh=m.map(s, User.class);
-        sS.insert(sh);
+        User us=m.map(s, User.class);
+        uS.insert(us);
     }
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public List<UserDTO> list(){
-        return sS.list().stream().map(y->{
+        return uS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
             return m.map(y, UserDTO.class);
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id) {
-        sS.delete(id);
+        uS.delete(id);
     }
     @GetMapping("/{id}")
     public UserDTO listarId(@PathVariable("id") Integer id){
         ModelMapper m= new ModelMapper();
-        UserDTO dto=m.map(sS.listId(id), UserDTO.class);
+        UserDTO dto=m.map(uS.listId(id), UserDTO.class);
         return dto;
     }
 

@@ -18,39 +18,39 @@ import java.util.stream.Collectors;
 @RestController
 public class OptionPayController {
     @Autowired
-    public IOptionPayService sS;
+    public IOptionPayService oS;
     @PostMapping
     public void registrar(@RequestBody OptionPayDTO s){
         ModelMapper m=new ModelMapper();
-        OptionPay sh=m.map(s, OptionPay.class);
-        sS.insert(sh);
+        OptionPay op=m.map(s, OptionPay.class);
+        oS.insert(op);
     }
     @PutMapping
     public void modificar(@RequestBody OptionPayDTO s){
         ModelMapper m=new ModelMapper();
-        OptionPay sh=m.map(s, OptionPay.class);
-        sS.insert(sh);
+        OptionPay op=m.map(s, OptionPay.class);
+        oS.insert(op);
     }
     @GetMapping
     public List<OptionPayDTO> list (){
-        return sS.list().stream().map(y->{
+        return oS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
             return m.map(y, OptionPayDTO.class);
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
     public void eliminacion(@PathVariable("id")Integer id){
-        sS.delete(id);
+        oS.delete(id);
     }
     @GetMapping("/{id}")
     public OptionPayDTO listadoId(@PathVariable ("id")Integer id){
         ModelMapper m= new ModelMapper();
-        OptionPayDTO dto=m.map(sS.listId(id),OptionPayDTO.class);
+        OptionPayDTO dto=m.map(oS.listId(id),OptionPayDTO.class);
         return dto;
     }
     @GetMapping("/listarportarjeta")
     public List<OptionPayDTO> buscarxtarjeta(){
-        return sS.listaxtarjeta().stream().map(x->{
+        return oS.listaxtarjeta().stream().map(x->{
             ModelMapper m= new ModelMapper();
             return m.map(x,OptionPayDTO.class);
         }).collect(Collectors.toList());

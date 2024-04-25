@@ -10,29 +10,29 @@ import java.util.List;
 @Service
 public class ExpCertificateServiceImplement implements IExpCertificateService {
     @Autowired
-    private IExpCertificateRepository sR;
+    private IExpCertificateRepository eR;
     @Override
     public void insert(ExpCertificate expCertificate) {
-        sR.save(expCertificate);
+        eR.save(expCertificate);
     }
 
     @Override
     public List<ExpCertificate> list() {
-        return sR.findAll();
+        return eR.findAll();
     }
 
     @Override
     public void delete(int id) {
-        sR.deleteById(id);
+        eR.deleteById(id);
     }
 
     @Override
     public ExpCertificate listId(int id) {
-        return sR.findById(id).orElse(new ExpCertificate());
+        return eR.findById(id).orElse(new ExpCertificate());
     }
 
     @Override
     public List<String[]> quantityUserbyInstitutionName() {
-        return sR.quantityUserbyInstitutionName();
+        return eR.quantityUserbyInstitutionName();
     }
 }

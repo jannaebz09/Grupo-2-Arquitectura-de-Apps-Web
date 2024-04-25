@@ -1,13 +1,16 @@
 package pe.edu.upc.qalikay.dtos;
 
+import jakarta.persistence.Column;
+
 public class UserDTO {
     private int idUser;
     private String userName;
     private String fullName;
     private String email;
     private String password;
+    private Boolean enabled;
     private String symptoms;
-    private String verificationExpert;
+    private Boolean verificationExpert;
     private int dni;
 
     public int getIdUser() {
@@ -50,6 +53,14 @@ public class UserDTO {
         this.password = password;
     }
 
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     public String getSymptoms() {
         return symptoms;
     }
@@ -58,11 +69,11 @@ public class UserDTO {
         this.symptoms = symptoms;
     }
 
-    public String isVerificationExpert() {
+    public Boolean getVerificationExpert() {
         return verificationExpert;
     }
 
-    public void setVerificationExpert(String verificationExpert) {
+    public void setVerificationExpert(Boolean verificationExpert) {
         this.verificationExpert = verificationExpert;
     }
 

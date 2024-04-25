@@ -6,25 +6,25 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name="Sale")
-public class Sale{
+public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idSale;
-    @Column(name="saleDate", nullable = false, length = 10)
+    @Column(name = "saleDate", nullable = false, length = 10)
     private LocalDate saleDate;
-    @Column(name="amount", nullable = false)
-    private int amount;
+    @Column(name = "amount", nullable = false)
+    private double amount;
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
     @ManyToOne
-    @JoinColumn(name="idOptionPay")
+    @JoinColumn(name = "idOptionPay")
     private OptionPay optionPay;
 
     public Sale() {
     }
 
-    public Sale(int idSale, LocalDate saleDate, int amount, User user, OptionPay optionPay) {
+    public Sale(int idSale, LocalDate saleDate, double amount, User user, OptionPay optionPay) {
         this.idSale = idSale;
         this.saleDate = saleDate;
         this.amount = amount;
@@ -48,11 +48,11 @@ public class Sale{
         this.saleDate = saleDate;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
