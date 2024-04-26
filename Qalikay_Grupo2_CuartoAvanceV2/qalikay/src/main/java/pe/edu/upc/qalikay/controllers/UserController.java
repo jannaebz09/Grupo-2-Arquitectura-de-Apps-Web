@@ -20,13 +20,13 @@ public class UserController {
     @Autowired
     private IUserService uS;
     @PostMapping
-    public void registrar (@RequestBody UserDTO s) {
+    public void registrar (@RequestBody User s) {
         ModelMapper m=new ModelMapper();
         User us=m.map(s, User.class);
         uS.insert(us);
     }
     @PutMapping
-    public void modificar (@RequestBody UserDTO s) {
+    public void modificar (@RequestBody User s) {
         ModelMapper m=new ModelMapper();
         User us=m.map(s, User.class);
         uS.insert(us);

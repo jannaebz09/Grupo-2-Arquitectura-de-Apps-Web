@@ -10,6 +10,7 @@ public class DetailSaleDTO {
 
     private int idDetailSale;
     private String descriptionDetailSale;
+    private double subtotal;
     private Sale sale;
     private Product product;
 
@@ -43,5 +44,13 @@ public class DetailSaleDTO {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
     }
 }

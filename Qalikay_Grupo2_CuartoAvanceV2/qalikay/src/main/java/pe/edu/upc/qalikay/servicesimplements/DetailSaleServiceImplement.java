@@ -18,6 +18,7 @@ public class DetailSaleServiceImplement implements IDetailSaleService {
     @Override
     public void insert(DetailSale detailSale) {
         dR.save(detailSale);
+        dR.actualizacionTotal();
     }
 
     @Override
