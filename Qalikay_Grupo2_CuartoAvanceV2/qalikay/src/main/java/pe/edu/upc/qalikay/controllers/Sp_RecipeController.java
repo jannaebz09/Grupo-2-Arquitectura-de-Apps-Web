@@ -5,11 +5,14 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import pe.edu.upc.qalikay.dtos.OrderByQualificationAverageDTO;
+import pe.edu.upc.qalikay.dtos.SaleByUserDTO;
 import pe.edu.upc.qalikay.dtos.Sp_recipeDTO;
 
 import pe.edu.upc.qalikay.entities.Sp_recipe;
 import pe.edu.upc.qalikay.servicesinterfaces.ISp_recipeService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,5 +50,18 @@ public class Sp_RecipeController {
         ModelMapper m= new ModelMapper();
         Sp_recipeDTO dto=m.map(sS.listId(id),Sp_recipeDTO.class);
         return dto;
+    }
+    @GetMapping("/mejoresrecetas")
+    public List<OrderByQualificationAverageDTO> ordenarpomediorecetas(){
+        List<String[]> filaLista= sS.orderByQualificationAverage();
+        List<OrderByQualificationAverageDTO> dtoLista=new ArrayList<>();
+        for(String[] columna:filaLista){
+            OrderByQualificationAverageDTO dto=new OrderByQualificationAverageDTO();
+            dto.setIdSp_Recipe(Integer.parseInt(columna[0]));
+            dto.setDescription(columna[1]);
+            dto.setAverage(Double.parseDouble(columna[2]));
+            dtoLista.add(dto);
+        }
+        return dtoLista;
     }
 }

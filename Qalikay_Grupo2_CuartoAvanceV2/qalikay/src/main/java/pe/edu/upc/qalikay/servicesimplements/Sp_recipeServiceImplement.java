@@ -37,4 +37,9 @@ public class Sp_recipeServiceImplement implements ISp_recipeService {
     public Sp_recipe listId(int id) {
         return sR.findById(id).orElse(new Sp_recipe());
     }
+
+    @Override
+    public List<String[]> orderByQualificationAverage() {
+        return sR.orderByQualificationAverage();
+    }
 }

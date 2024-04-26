@@ -18,10 +18,10 @@ public class Product {
     @Column(name = "preparationProduct", nullable = false, length = 50)
     private String preparationProduct;
 
-    @Column(name = "amountPrdouct", nullable = false)
+    @Column(name = "amountProduct", nullable = false)
     private double amountProduct;
 
-    @Column(name = "rucPrdouct", nullable = false, length = 50)
+    @Column(name = "rucProduct", nullable = false, length = 50)
     private int rucProduct;
 
     public Product() {

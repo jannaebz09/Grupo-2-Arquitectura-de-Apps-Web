@@ -12,7 +12,7 @@ public class Sale {
     private int idSale;
     @Column(name = "saleDate", nullable = false, length = 10)
     private LocalDate saleDate;
-    @Column(name = "amount", nullable = false)
+    @Column(name = "total", nullable = false)
     private double total;
     @ManyToOne
     @JoinColumn(name = "idUser")

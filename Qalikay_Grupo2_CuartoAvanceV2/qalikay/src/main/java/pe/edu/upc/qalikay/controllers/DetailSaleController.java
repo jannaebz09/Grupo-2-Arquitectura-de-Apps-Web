@@ -33,10 +33,10 @@ public class DetailSaleController {
         dS.insert(de);
     }
     @GetMapping
-    public List<DetailSaleDTO> list (){
+    public List<DetailSale> list (){
         return dS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
-            return m.map(y, DetailSaleDTO.class);
+            return m.map(y, DetailSale.class);
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
