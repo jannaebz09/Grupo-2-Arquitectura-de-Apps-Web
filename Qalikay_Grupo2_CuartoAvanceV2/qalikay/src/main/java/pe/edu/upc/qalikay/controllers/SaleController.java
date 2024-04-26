@@ -38,10 +38,10 @@ public class SaleController {
         sS.insert(sa);
     }
     @GetMapping
-    public List<SaleDTO> list (){
+    public List<Sale> list (){
         return sS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
-            return m.map(y, SaleDTO.class);
+            return m.map(y, Sale.class);
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")

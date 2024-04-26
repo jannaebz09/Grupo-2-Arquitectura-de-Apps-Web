@@ -7,7 +7,7 @@ public class UserDTO {
     private String userName;
     private String fullName;
     private String email;
-    private String password;
+
     private Boolean enabled;
     private String symptoms;
     private Boolean verificationExpert;
@@ -43,14 +43,6 @@ public class UserDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Boolean getEnabled() {

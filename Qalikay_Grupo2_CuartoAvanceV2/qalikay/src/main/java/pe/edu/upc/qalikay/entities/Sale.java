@@ -13,7 +13,7 @@ public class Sale {
     @Column(name = "saleDate", nullable = false, length = 10)
     private LocalDate saleDate;
     @Column(name = "amount", nullable = false)
-    private double amount;
+    private double total;
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
@@ -24,10 +24,10 @@ public class Sale {
     public Sale() {
     }
 
-    public Sale(int idSale, LocalDate saleDate, double amount, User user, OptionPay optionPay) {
+    public Sale(int idSale, LocalDate saleDate, double total, User user, OptionPay optionPay) {
         this.idSale = idSale;
         this.saleDate = saleDate;
-        this.amount = amount;
+        this.total = total;
         this.user = user;
         this.optionPay = optionPay;
     }
@@ -48,12 +48,12 @@ public class Sale {
         this.saleDate = saleDate;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getTotal() {
+        return total;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setTotal(double total) {
+        this.total = total;
     }
 
     public User getUser() {
