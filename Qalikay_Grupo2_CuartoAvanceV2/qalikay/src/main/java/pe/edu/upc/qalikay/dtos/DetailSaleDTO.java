@@ -1,6 +1,7 @@
 package pe.edu.upc.qalikay.dtos;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import pe.edu.upc.qalikay.entities.Product;
@@ -10,8 +11,8 @@ public class DetailSaleDTO {
 
     private int idDetailSale;
     private String descriptionDetailSale;
-    private double subtotal;
     private Sale sale;
+    private int quantity;
     private Product product;
 
     public int getIdDetailSale() {
@@ -38,19 +39,19 @@ public class DetailSaleDTO {
         this.sale = sale;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public Product getProduct() {
         return product;
     }
 
     public void setProduct(Product product) {
         this.product = product;
-    }
-
-    public double getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(double subtotal) {
-        this.subtotal = subtotal;
     }
 }

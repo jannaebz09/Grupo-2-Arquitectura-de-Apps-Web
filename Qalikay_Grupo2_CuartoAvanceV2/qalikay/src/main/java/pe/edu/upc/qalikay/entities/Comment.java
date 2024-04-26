@@ -22,17 +22,21 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "idSpecialRecipe")
+    private Sp_recipe spRecipe;
 
     public Comment() {
     }
 
-    public Comment(int idComment, String userType, String textComment, LocalDate dateComment, int qualification, User user) {
+    public Comment(int idComment, String userType, String textComment, LocalDate dateComment, int qualification, User user, Sp_recipe spRecipe) {
         this.idComment = idComment;
         this.userType = userType;
         this.textComment = textComment;
         this.dateComment = dateComment;
         this.qualification = qualification;
         this.user = user;
+        this.spRecipe = spRecipe;
     }
 
     public int getIdComment() {
@@ -81,5 +85,13 @@ public class Comment {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Sp_recipe getSpRecipe() {
+        return spRecipe;
+    }
+
+    public void setSpRecipe(Sp_recipe spRecipe) {
+        this.spRecipe = spRecipe;
     }
 }

@@ -8,4 +8,5 @@ public interface ISp_recipeService {
     public List<Sp_recipe> list();
     public void delete(int id);
     public Sp_recipe listId(int id);
+    public List<String[]> orderByQualificationAverage();
 }

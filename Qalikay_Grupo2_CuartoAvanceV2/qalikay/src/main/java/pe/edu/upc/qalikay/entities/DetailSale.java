@@ -12,9 +12,10 @@ public class DetailSale {
     @Column(name = "descriptionDetailSale", nullable = false, length = 75)
     private String descriptionDetailSale;
 
-    @Column(name = "amount", nullable = false)
+    @Column(name = "subtotal", nullable = false)
     private double subtotal;
-
+    @Column(name = "quantity", nullable = false)
+    private int quantity;
     @ManyToOne
     @JoinColumn(name = "idSale")
     private Sale sale;
@@ -27,10 +28,11 @@ public class DetailSale {
 
     }
 
-    public DetailSale(int idDetailSale, String descriptionDetailSale, double subtotal, Sale sale, Product product) {
+    public DetailSale(int idDetailSale, String descriptionDetailSale, double subtotal, int quantity, Sale sale, Product product) {
         this.idDetailSale = idDetailSale;
         this.descriptionDetailSale = descriptionDetailSale;
         this.subtotal = subtotal;
+        this.quantity = quantity;
         this.sale = sale;
         this.product = product;
     }
@@ -57,6 +59,14 @@ public class DetailSale {
 
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public Sale getSale() {

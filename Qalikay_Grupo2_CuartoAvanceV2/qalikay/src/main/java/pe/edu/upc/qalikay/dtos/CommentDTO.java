@@ -1,6 +1,7 @@
 package pe.edu.upc.qalikay.dtos;
 
 import jakarta.persistence.*;
+import pe.edu.upc.qalikay.entities.Sp_recipe;
 import pe.edu.upc.qalikay.entities.User;
 
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ public class CommentDTO {
     private LocalDate dateComment;
     private int qualification;
     private User user;
+    private Sp_recipe spRecipe;
 
     public int getIdComment() {
         return idComment;
@@ -59,5 +61,13 @@ public class CommentDTO {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Sp_recipe getSpRecipe() {
+        return spRecipe;
+    }
+
+    public void setSpRecipe(Sp_recipe spRecipe) {
+        this.spRecipe = spRecipe;
     }
 }

@@ -12,6 +12,14 @@ import pe.edu.upc.qalikay.entities.DetailSale;
 public interface IDetailSaleRepository extends JpaRepository<DetailSale, Integer> {
     @Transactional
     @Modifying
-    @Query(value = "UPDATE sale SET amount = (SELECT COALESCE(SUM(amount) * 1.18, 0) FROM detail_sale WHERE id_sale = sale.id_sale)", nativeQuery = true)
+    @Query(value = "UPDATE sale SET total = (SELECT COALESCE(SUM(subtotal) * 1.18, 0) FROM detail_sale WHERE id_sale = sale.id_sale)", nativeQuery = true)
     public void actualizacionTotal();
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE detail_sale  \n" +
+            "SET subtotal = (  \n" +
+            "SELECT COALESCE(SUM(p.amount_product*detail_Sale.quantity), 0) \n" +
+            "FROM product p   \n" +
+            "WHERE p.id_Product = detail_sale.id_producto) ", nativeQuery = true)
+    public void actualizacionSubTotal();
 }

@@ -18,6 +18,7 @@ public class DetailSaleServiceImplement implements IDetailSaleService {
     @Override
     public void insert(DetailSale detailSale) {
         dR.save(detailSale);
+        dR.actualizacionSubTotal();
         dR.actualizacionTotal();
     }
 
@@ -29,7 +30,8 @@ public class DetailSaleServiceImplement implements IDetailSaleService {
     @Override
     public void delete(int id) {
         dR.deleteById(id);
-
+        dR.actualizacionSubTotal();
+        dR.actualizacionTotal();
     }
 
     @Override
