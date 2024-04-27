@@ -2,6 +2,7 @@ package pe.edu.upc.qalikay.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.ExpCertificateDTO;
 import pe.edu.upc.qalikay.dtos.QualificationAverageByUserDTO;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 public class ExpCertificateController {
     @Autowired
     private IExpCertificateService eS;
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     @PostMapping
     public void registrar(@RequestBody ExpCertificateDTO s){
         ModelMapper m=new ModelMapper();
@@ -25,6 +27,7 @@ public class ExpCertificateController {
         eS.insert(ex);
     }
     @PutMapping
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     public void modificar(@RequestBody ExpCertificateDTO s){
         ModelMapper m=new ModelMapper();
         ExpCertificate ex=m.map(s,ExpCertificate.class);
@@ -38,6 +41,7 @@ public class ExpCertificateController {
             return m.map(y,ExpCertificateDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         eS.delete(id);
@@ -48,6 +52,7 @@ public class ExpCertificateController {
         ExpCertificateDTO dto=m.map(eS.listId(id),ExpCertificateDTO.class);
         return dto;
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/usuariosxinstitucion")
     public List<QuantityUserByInstitutionNameDTO> cantidadUsuariosPorInstitucion(){
         List<String[]> filaLista=eS.quantityUserbyInstitutionName();

@@ -3,6 +3,7 @@ package pe.edu.upc.qalikay.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.ProductDTO;
 
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class ProductController {
     @Autowired
     public IProductService pS;
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     @PostMapping
     public void registrar(@RequestBody ProductDTO s){
         ModelMapper m=new ModelMapper();
@@ -26,6 +28,7 @@ public class ProductController {
         pS.insert(pr);
     }
     @PutMapping
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     public void modificar(@RequestBody ProductDTO s){
         ModelMapper m=new ModelMapper();
         Product pr=m.map(s, Product.class);
@@ -38,6 +41,7 @@ public class ProductController {
             return m.map(y, ProductDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     @DeleteMapping("/{id}")
     public void eliminacion(@PathVariable("id")Integer id){
         pS.delete(id);
@@ -49,13 +53,14 @@ public class ProductController {
         return dto;
     }
     @GetMapping("/buscar")
-    public List<ProductDTO> buscarModelo(@RequestParam String nombre){
+    public List<ProductDTO> buscarProducto(@RequestParam String nombre){
 
         return pS.findByNameProduct(nombre).stream().map(y->{
             ModelMapper m=new ModelMapper();
             return m.map(y,ProductDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     @GetMapping("/cantidadtotal")
     public long countTotalProducts() {
         return pS.countTotalProducts();

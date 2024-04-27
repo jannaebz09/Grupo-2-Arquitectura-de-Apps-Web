@@ -25,6 +25,7 @@ public class UserController {
         User us=m.map(s, User.class);
         uS.insert(us);
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PutMapping
     public void modificar (@RequestBody User s) {
         ModelMapper m=new ModelMapper();
@@ -39,10 +40,12 @@ public class UserController {
             return m.map(y, UserDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id) {
         uS.delete(id);
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/{id}")
     public UserDTO listarId(@PathVariable("id") Integer id){
         ModelMapper m= new ModelMapper();

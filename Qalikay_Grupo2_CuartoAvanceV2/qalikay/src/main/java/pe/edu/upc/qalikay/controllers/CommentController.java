@@ -2,6 +2,7 @@ package pe.edu.upc.qalikay.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.CommentDTO;
 import pe.edu.upc.qalikay.dtos.QualificationAverageByUserDTO;
@@ -48,6 +49,7 @@ public class CommentController {
         CommentDTO dto=m.map(cS.listId(id),CommentDTO.class);
         return dto;
     }
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     @GetMapping("/promedio")
     public List<QualificationAverageByUserDTO> promedioCalificacion(){
         List<String[]> filaLista=cS.averageByUser();

@@ -3,6 +3,7 @@ package pe.edu.upc.qalikay.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.DetailSaleDTO;
 
@@ -26,6 +27,7 @@ public class DetailSaleController {
         DetailSale de=m.map(s, DetailSale.class);
         dS.insert(de);
     }
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     @PutMapping
     public void modificar(@RequestBody DetailSaleDTO s){
         ModelMapper m=new ModelMapper();
@@ -39,7 +41,6 @@ public class DetailSaleController {
             return m.map(y, DetailSale.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping("/{id}")
     public void eliminacionDetalleVenta(@PathVariable("id")Integer id){
         dS.delete(id);
     }

@@ -1,5 +1,6 @@
 package pe.edu.upc.qalikay.servicesinterfaces;
 
+import org.springframework.data.repository.query.Param;
 import pe.edu.upc.qalikay.entities.Sale;
 
 import java.time.LocalDate;
@@ -11,9 +12,8 @@ public interface ISaleService {
     public void delete(int id);
     public Sale listId(int id);
     public List<String[]> quantitySaleByUser();
-    long sumTotalSales();
+    public double sumTotalSales(LocalDate Dia_inicial, LocalDate Dia_final);
     public List<Sale>findSalesBySaleDateEquals(LocalDate date);
-
-    public List<Object[]> getUsersWithMostSales(LocalDate Dia_inicial, LocalDate Dia_final);
+    List<String[]> findTopUsersWithMostSales(LocalDate Dia_inicial, LocalDate Dia_final);
 
 }

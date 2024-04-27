@@ -39,8 +39,8 @@ public class SaleServiceImplement implements ISaleService {
     }
 
     @Override
-    public long sumTotalSales() {
-        return sR.sumTotalSales();
+    public double sumTotalSales(LocalDate Dia_inicial, LocalDate Dia_final) {
+        return sR.sumTotalSales(Dia_inicial,Dia_final);
     }
 
     @Override
@@ -49,7 +49,8 @@ public class SaleServiceImplement implements ISaleService {
     }
 
     @Override
-    public List<Object[]> getUsersWithMostSales(LocalDate Dia_inicial, LocalDate Dia_final) {
-        return sR.findTopUsersWithMostSales(Dia_inicial, Dia_final);
+    public List<String[]> findTopUsersWithMostSales(LocalDate Dia_inicial, LocalDate Dia_final) {
+        return sR.findTopUsersWithMostSales(Dia_inicial,Dia_final);
     }
+
 }
