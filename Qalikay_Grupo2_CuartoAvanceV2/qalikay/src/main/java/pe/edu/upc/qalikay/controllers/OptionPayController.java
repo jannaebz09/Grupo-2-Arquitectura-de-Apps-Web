@@ -3,6 +3,7 @@ package pe.edu.upc.qalikay.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.OptionPayDTO;
 
@@ -19,12 +20,14 @@ import java.util.stream.Collectors;
 public class OptionPayController {
     @Autowired
     public IOptionPayService oS;
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping
     public void registrar(@RequestBody OptionPayDTO s){
         ModelMapper m=new ModelMapper();
         OptionPay op=m.map(s, OptionPay.class);
         oS.insert(op);
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PutMapping
     public void modificar(@RequestBody OptionPayDTO s){
         ModelMapper m=new ModelMapper();
@@ -38,6 +41,7 @@ public class OptionPayController {
             return m.map(y, OptionPayDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping("/{id}")
     public void eliminacion(@PathVariable("id")Integer id){
         oS.delete(id);
@@ -48,6 +52,7 @@ public class OptionPayController {
         OptionPayDTO dto=m.map(oS.listId(id),OptionPayDTO.class);
         return dto;
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/listarportarjeta")
     public List<OptionPayDTO> buscarxtarjeta(){
         return oS.listaxtarjeta().stream().map(x->{

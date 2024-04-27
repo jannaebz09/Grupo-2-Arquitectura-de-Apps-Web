@@ -10,22 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="030d6952-fbe1-46d0-b574-477093fd54be" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/qalikay_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/DetailSaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/DetailSaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/ExpCertificateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/ExpCertificateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/OptionPayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/OptionPayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/SaleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/Sp_RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/Sp_RecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/dtos/CommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/dtos/CommentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/dtos/DetailSaleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/dtos/DetailSaleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/entities/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/entities/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/entities/DetailSale.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/entities/DetailSale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/entities/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/entities/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/entities/Sale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/IDetailSaleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/IDetailSaleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/ISp_recipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/ISp_recipeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/DetailSaleServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/DetailSaleServiceImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/Sp_recipeServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/Sp_recipeServiceImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/ISp_recipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/ISp_recipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/ISaleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/repositories/ISaleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/securities/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/securities/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/SaleServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesimplements/SaleServiceImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/ISaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/java/pe/edu/upc/qalikay/servicesinterfaces/ISaleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Qalikay_Grupo2_CuartoAvanceV2/qalikay/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +57,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.qalikay [clean,validate,compile,test...].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -117,7 +118,8 @@
       <workItem from="1714026194506" duration="1289000" />
       <workItem from="1714027652080" duration="2296000" />
       <workItem from="1714100359752" duration="842000" />
-      <workItem from="1714143200456" duration="6954000" />
+      <workItem from="1714143200456" duration="7184000" />
+      <workItem from="1714153192775" duration="11273000" />
     </task>
     <servers />
   </component>

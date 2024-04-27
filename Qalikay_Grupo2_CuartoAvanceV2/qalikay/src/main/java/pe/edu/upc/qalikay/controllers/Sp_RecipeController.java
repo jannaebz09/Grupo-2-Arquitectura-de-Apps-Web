@@ -3,6 +3,7 @@ package pe.edu.upc.qalikay.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import pe.edu.upc.qalikay.dtos.OrderByQualificationAverageDTO;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 public class Sp_RecipeController {
     @Autowired
     private ISp_recipeService sS;
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     @PostMapping
     public void registrar (@RequestBody Sp_recipeDTO s){
         ModelMapper m=new ModelMapper();
@@ -29,6 +31,7 @@ public class Sp_RecipeController {
         sS.insert(sp);
     }
     @PutMapping
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     public void modificar (@RequestBody Sp_recipeDTO s){
         ModelMapper m=new ModelMapper();
         Sp_recipe sp=m.map(s, Sp_recipe.class);
@@ -41,6 +44,7 @@ public class Sp_RecipeController {
             return m.map(y,Sp_recipeDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id){
         sS.delete(id);

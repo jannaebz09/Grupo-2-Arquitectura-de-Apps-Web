@@ -16,11 +16,17 @@ public interface ISaleRepository extends JpaRepository<Sale,Integer>{
             "on s.id_user = u.id_user \n " +
             "group by u.full_name ",nativeQuery = true)
     public List<String[]> quantitySaleByUser();
-    @Query(value = "SELECT SUM(s.amount) FROM Sale s" , nativeQuery = true)
-    long sumTotalSales();
+    @Query(value = "SELECT SUM(s.total) FROM Sale s WHERE s.sale_date BETWEEN :Dia_inicial AND :Dia_final " , nativeQuery = true)
+    public double sumTotalSales(@Param("Dia_inicial") LocalDate Dia_inicial, @Param("Dia_final") LocalDate Dia_final);
     public List<Sale>findSalesBySaleDateEquals(LocalDate date);
 
-    @Query("SELECT s.user, COUNT(s) as saleCount FROM Sale s WHERE s.saleDate BETWEEN :Dia_inicial AND :Dia_final GROUP BY s.user ORDER BY saleCount DESC")
-    List<Object[]> findTopUsersWithMostSales(@Param("Dia_inicial") LocalDate Dia_inicial, @Param("Dia_final") LocalDate Dia_final);
+    @Query(value = "SELECT s.id_user, u.full_name as userName, COUNT(*) as saleCount " +
+            "FROM sale s " +
+            "JOIN usert u ON s.id_user = u.id_user " +
+            "WHERE s.sale_date BETWEEN :Dia_inicial AND :Dia_final " +
+            "GROUP BY s.id_user, u.full_name " +
+            "ORDER BY saleCount DESC", nativeQuery = true)
+    List<String[]> findTopUsersWithMostSales(@Param("Dia_inicial") LocalDate Dia_inicial, @Param("Dia_final") LocalDate Dia_final);
+
 
 }
