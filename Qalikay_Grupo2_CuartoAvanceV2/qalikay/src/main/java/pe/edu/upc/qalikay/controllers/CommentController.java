@@ -49,7 +49,7 @@ public class CommentController {
         CommentDTO dto=m.map(cS.listId(id),CommentDTO.class);
         return dto;
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @GetMapping("/promedio")
     public List<QualificationAverageByUserDTO> promedioCalificacion(){
         List<String[]> filaLista=cS.averageByUser();

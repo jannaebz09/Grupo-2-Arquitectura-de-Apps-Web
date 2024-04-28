@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class ProductController {
     @Autowired
     public IProductService pS;
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @PostMapping
     public void registrar(@RequestBody ProductDTO s){
         ModelMapper m=new ModelMapper();
@@ -28,7 +28,7 @@ public class ProductController {
         pS.insert(pr);
     }
     @PutMapping
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     public void modificar(@RequestBody ProductDTO s){
         ModelMapper m=new ModelMapper();
         Product pr=m.map(s, Product.class);
@@ -41,7 +41,7 @@ public class ProductController {
             return m.map(y, ProductDTO.class);
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @DeleteMapping("/{id}")
     public void eliminacion(@PathVariable("id")Integer id){
         pS.delete(id);
@@ -60,7 +60,7 @@ public class ProductController {
             return m.map(y,ProductDTO.class);
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @GetMapping("/cantidadtotal")
     public long countTotalProducts() {
         return pS.countTotalProducts();

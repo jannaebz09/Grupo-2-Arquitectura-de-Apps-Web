@@ -7,6 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.DetailSaleDTO;
 
+import pe.edu.upc.qalikay.dtos.DetailSaleWithoutSubtotalDTO;
 import pe.edu.upc.qalikay.entities.DetailSale;
 
 import pe.edu.upc.qalikay.servicesinterfaces.IDetailSaleService;
@@ -22,25 +23,27 @@ public class DetailSaleController {
     @Autowired
     public IDetailSaleService dS;
     @PostMapping
-    public void registrar(@RequestBody DetailSaleDTO s){
+    public void registrar(@RequestBody DetailSaleWithoutSubtotalDTO s){
         ModelMapper m=new ModelMapper();
         DetailSale de=m.map(s, DetailSale.class);
         dS.insert(de);
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @PutMapping
-    public void modificar(@RequestBody DetailSaleDTO s){
+    public void modificar(@RequestBody DetailSaleWithoutSubtotalDTO s){
         ModelMapper m=new ModelMapper();
         DetailSale de=m.map(s, DetailSale.class);
         dS.insert(de);
     }
     @GetMapping
-    public List<DetailSale> list (){
+    public List<DetailSaleDTO> list (){
         return dS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
-            return m.map(y, DetailSale.class);
+            return m.map(y, DetailSaleDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
     public void eliminacionDetalleVenta(@PathVariable("id")Integer id){
         dS.delete(id);
     }

@@ -20,9 +20,10 @@ public class Role {
 
     }
 
-    public Role(int idRole, String descriptionRole) {
+    public Role(int idRole, String descriptionRole, User user) {
         this.idRole = idRole;
         this.descriptionRole = descriptionRole;
+        this.user = user;
     }
 
     public int getIdRole() {
@@ -39,5 +40,13 @@ public class Role {
 
     public void setDescriptionRole(String descriptionRole) {
         this.descriptionRole = descriptionRole;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

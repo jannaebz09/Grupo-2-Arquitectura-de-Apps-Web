@@ -21,13 +21,13 @@ public class RoleController {
     @Autowired
     public IRoleService rS;
     @PostMapping
-    public void registrarRole(@RequestBody Role role){
+    public void registrarRole(@RequestBody RoleDTO role){
         ModelMapper m=new ModelMapper();
         Role ro=m.map(role, Role.class);
         rS.insert(ro);
     }
     @PutMapping
-    public void modificar(@RequestBody Role role){
+    public void modificar(@RequestBody RoleDTO role){
         ModelMapper m=new ModelMapper();
         Role ro=m.map(role, Role.class);
         rS.insert(ro);

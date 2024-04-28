@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class ExpCertificateController {
     @Autowired
     private IExpCertificateService eS;
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @PostMapping
     public void registrar(@RequestBody ExpCertificateDTO s){
         ModelMapper m=new ModelMapper();
@@ -27,7 +27,7 @@ public class ExpCertificateController {
         eS.insert(ex);
     }
     @PutMapping
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     public void modificar(@RequestBody ExpCertificateDTO s){
         ModelMapper m=new ModelMapper();
         ExpCertificate ex=m.map(s,ExpCertificate.class);
@@ -41,7 +41,7 @@ public class ExpCertificateController {
             return m.map(y,ExpCertificateDTO.class);
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         eS.delete(id);

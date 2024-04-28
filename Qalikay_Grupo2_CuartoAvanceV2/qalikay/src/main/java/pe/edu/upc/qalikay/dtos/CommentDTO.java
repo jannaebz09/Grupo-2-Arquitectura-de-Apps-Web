@@ -12,8 +12,8 @@ public class CommentDTO {
     private String textComment;
     private LocalDate dateComment;
     private int qualification;
-    private User user;
-    private Sp_recipe spRecipe;
+    private UserWithoutPasswordDTO user;
+    private Sp_recipeDTO spRecipe;
 
     public int getIdComment() {
         return idComment;
@@ -55,19 +55,19 @@ public class CommentDTO {
         this.qualification = qualification;
     }
 
-    public User getUser() {
+    public UserWithoutPasswordDTO getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserWithoutPasswordDTO user) {
         this.user = user;
     }
 
-    public Sp_recipe getSpRecipe() {
+    public Sp_recipeDTO getSpRecipe() {
         return spRecipe;
     }
 
-    public void setSpRecipe(Sp_recipe spRecipe) {
+    public void setSpRecipe(Sp_recipeDTO spRecipe) {
         this.spRecipe = spRecipe;
     }
 }

@@ -10,7 +10,7 @@ public class ExpCertificateDTO {
     private int uniqueCodeCertificate;
     private String institutionName;
     private String certificateTitle;
-    private User user;
+    private UserWithoutPasswordDTO user;
 
     public int getIdExpCertificate() {
         return idExpCertificate;
@@ -44,11 +44,11 @@ public class ExpCertificateDTO {
         this.certificateTitle = certificateTitle;
     }
 
-    public User getUser() {
+    public UserWithoutPasswordDTO getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserWithoutPasswordDTO user) {
         this.user = user;
     }
 }
