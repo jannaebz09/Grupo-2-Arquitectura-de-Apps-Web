@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.SaleByUserDTO;
 import pe.edu.upc.qalikay.dtos.SaleDTO;
 
+import pe.edu.upc.qalikay.dtos.SaleWithoutTotalDTO;
 import pe.edu.upc.qalikay.dtos.TopUsersWithMostSalesDTO;
 import pe.edu.upc.qalikay.entities.Sale;
 
@@ -28,27 +29,27 @@ public class SaleController {
     @Autowired
     public ISaleService sS;
     @PostMapping
-    public void registrar(@RequestBody SaleDTO s){
+    public void registrar(@RequestBody SaleWithoutTotalDTO s){
         ModelMapper m=new ModelMapper();
         Sale sa=m.map(s, Sale.class);
         sS.insert(sa);
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @PutMapping
-    public void modificar(@RequestBody SaleDTO s){
+    public void modificar(@RequestBody SaleWithoutTotalDTO s){
         ModelMapper m=new ModelMapper();
         Sale sa=m.map(s, Sale.class);
         sS.insert(sa);
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @GetMapping
-    public List<Sale> list (){
+    public List<SaleDTO> list (){
         return sS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
-            return m.map(y, Sale.class);
+            return m.map(y, SaleDTO.class);
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @DeleteMapping("/{id}")
     public void eliminacion(@PathVariable("id")Integer id){
         sS.delete(id);
@@ -59,7 +60,7 @@ public class SaleController {
         SaleDTO dto=m.map(sS.listId(id),SaleDTO.class);
         return dto;
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @GetMapping("/cantidades")
     public List<SaleByUserDTO> cantidadVentas(){
         List<String[]> filaLista=sS.quantitySaleByUser();
@@ -77,7 +78,7 @@ public class SaleController {
     public double sumTotalSales(@RequestParam LocalDate Dia_inicial, @RequestParam LocalDate Dia_final){
         return sS.sumTotalSales(Dia_inicial,Dia_final);
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @GetMapping("/buscarventaporfecha")
     public List<SaleDTO> buscarventaporfecha(@RequestParam LocalDate date){
         return sS.findSalesBySaleDateEquals(date).stream().map(y->{
@@ -85,7 +86,7 @@ public class SaleController {
             return m.map(y, SaleDTO.class);
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @GetMapping("/UsuariosTop")
     public List<TopUsersWithMostSalesDTO> getTopUsersWithMostSales(@RequestParam LocalDate Dia_inicial, @RequestParam LocalDate Dia_final){
         List<String[]> filaLista=sS.findTopUsersWithMostSales(Dia_inicial,Dia_final);

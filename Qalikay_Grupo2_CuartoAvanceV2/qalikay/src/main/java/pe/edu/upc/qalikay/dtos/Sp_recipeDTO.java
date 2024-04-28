@@ -11,7 +11,7 @@ public class Sp_recipeDTO {
 
     private LocalDate shippingDate;
 
-    private User user;
+    private UserWithoutPasswordDTO user;
 
     public int getIdSpecialRecipe() {
         return idSpecialRecipe;
@@ -37,11 +37,11 @@ public class Sp_recipeDTO {
         this.shippingDate = shippingDate;
     }
 
-    public User getUser() {
+    public UserWithoutPasswordDTO getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserWithoutPasswordDTO user) {
         this.user = user;
     }
 }

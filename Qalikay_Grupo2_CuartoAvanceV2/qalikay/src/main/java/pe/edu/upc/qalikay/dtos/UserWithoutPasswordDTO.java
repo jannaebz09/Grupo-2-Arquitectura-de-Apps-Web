@@ -2,12 +2,11 @@ package pe.edu.upc.qalikay.dtos;
 
 import jakarta.persistence.Column;
 
-public class UserDTO {
+public class UserWithoutPasswordDTO {
     private int idUser;
     private String userName;
     private String fullName;
     private String email;
-    private String password;
     private Boolean enabled;
     private String symptoms;
     private Boolean verificationExpert;
@@ -75,13 +74,5 @@ public class UserDTO {
 
     public void setDni(int dni) {
         this.dni = dni;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

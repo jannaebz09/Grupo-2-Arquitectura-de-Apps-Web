@@ -23,15 +23,15 @@ import java.util.stream.Collectors;
 public class Sp_RecipeController {
     @Autowired
     private ISp_recipeService sS;
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @PostMapping
     public void registrar (@RequestBody Sp_recipeDTO s){
         ModelMapper m=new ModelMapper();
         Sp_recipe sp=m.map(s, Sp_recipe.class);
         sS.insert(sp);
     }
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @PutMapping
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
     public void modificar (@RequestBody Sp_recipeDTO s){
         ModelMapper m=new ModelMapper();
         Sp_recipe sp=m.map(s, Sp_recipe.class);
@@ -44,7 +44,7 @@ public class Sp_RecipeController {
             return m.map(y,Sp_recipeDTO.class);
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAuthority('ADMIN' or 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id){
         sS.delete(id);

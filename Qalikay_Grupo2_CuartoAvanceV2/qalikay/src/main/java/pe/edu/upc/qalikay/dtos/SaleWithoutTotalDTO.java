@@ -1,16 +1,12 @@
 package pe.edu.upc.qalikay.dtos;
-import jakarta.persistence.*;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+
 import pe.edu.upc.qalikay.entities.OptionPay;
-import pe.edu.upc.qalikay.entities.User;
 
 import java.time.LocalDate;
 
-public class SaleDTO {
+public class SaleWithoutTotalDTO {
     private int idSale;
     private LocalDate saleDate;
-    private double total;
 
     private UserWithoutPasswordDTO user;
     private OptionPay optionPay;
@@ -45,13 +41,5 @@ public class SaleDTO {
 
     public void setOptionPay(OptionPay optionPay) {
         this.optionPay = optionPay;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
     }
 }

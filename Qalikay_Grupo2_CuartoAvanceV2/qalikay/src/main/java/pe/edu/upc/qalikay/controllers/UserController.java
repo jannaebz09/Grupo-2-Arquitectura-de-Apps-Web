@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.UserDTO;
+import pe.edu.upc.qalikay.dtos.UserWithoutPasswordDTO;
 import pe.edu.upc.qalikay.entities.User;
 import pe.edu.upc.qalikay.servicesinterfaces.IUserService;
 
@@ -20,24 +21,24 @@ public class UserController {
     @Autowired
     private IUserService uS;
     @PostMapping
-    public void registrar (@RequestBody User s) {
+    public void registrar (@RequestBody UserDTO s) {
         ModelMapper m=new ModelMapper();
         User us=m.map(s, User.class);
         uS.insert(us);
     }
     @PreAuthorize("hasAuthority('ADMIN')")
     @PutMapping
-    public void modificar (@RequestBody User s) {
+    public void modificar (@RequestBody UserDTO s) {
         ModelMapper m=new ModelMapper();
         User us=m.map(s, User.class);
         uS.insert(us);
     }
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
-    public List<UserDTO> list(){
+    public List<UserWithoutPasswordDTO> list(){
         return uS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
-            return m.map(y, UserDTO.class);
+            return m.map(y, UserWithoutPasswordDTO.class);
         }).collect(Collectors.toList());
     }
     @PreAuthorize("hasAuthority('ADMIN')")
@@ -47,9 +48,9 @@ public class UserController {
     }
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/{id}")
-    public UserDTO listarId(@PathVariable("id") Integer id){
+    public UserWithoutPasswordDTO listarId(@PathVariable("id") Integer id){
         ModelMapper m= new ModelMapper();
-        UserDTO dto=m.map(uS.listId(id), UserDTO.class);
+        UserWithoutPasswordDTO dto=m.map(uS.listId(id), UserWithoutPasswordDTO.class);
         return dto;
     }
 
