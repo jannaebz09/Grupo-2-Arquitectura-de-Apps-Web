@@ -1,8 +1,10 @@
 package pe.edu.upc.qalikay.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -11,7 +13,7 @@ import java.util.List;
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUser;
+    private Long idUser;
     @Column(name = "userName", nullable = false, length = 50)
     private String userName;
     @Column(name = "fullName", nullable = false, length = 50)
@@ -28,14 +30,14 @@ public class User implements Serializable {
     private Boolean verificationExpert;
     @Column(name = "dni", nullable = false)
     private int dni;
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<Role> roles;
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Role> roles = new ArrayList<>();
 
     public User() {
     }
 
-    public User(int idUser, String userName, String fullName, String email, String password, Boolean enabled, String symptoms, Boolean verificationExpert, int dni, List<Role> roles) {
+    public User(Long idUser, String userName, String fullName, String email, String password, Boolean enabled, String symptoms, Boolean verificationExpert, int dni, List<Role> roles) {
         this.idUser = idUser;
         this.userName = userName;
         this.fullName = fullName;
@@ -48,11 +50,11 @@ public class User implements Serializable {
         this.roles = roles;
     }
 
-    public int getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(int idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 

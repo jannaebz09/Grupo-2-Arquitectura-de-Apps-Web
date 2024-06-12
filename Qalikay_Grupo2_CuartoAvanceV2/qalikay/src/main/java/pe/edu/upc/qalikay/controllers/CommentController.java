@@ -19,18 +19,21 @@ import java.util.stream.Collectors;
 public class CommentController {
     @Autowired
     private ICommentService cS;
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @PostMapping
     public void registrar(@RequestBody CommentDTO s){
         ModelMapper m=new ModelMapper();
         Comment co=m.map(s,Comment.class);
         cS.insert(co);
     }
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @PutMapping
     public void modificar(@RequestBody CommentDTO s){
         ModelMapper m=new ModelMapper();
         Comment co=m.map(s,Comment.class);
         cS.insert(co);
     }
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @GetMapping
     public List<CommentDTO> list(){
 
@@ -39,6 +42,7 @@ public class CommentController {
             return m.map(y,CommentDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         cS.delete(id);

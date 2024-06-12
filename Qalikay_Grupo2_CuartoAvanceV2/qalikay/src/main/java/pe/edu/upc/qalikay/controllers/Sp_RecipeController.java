@@ -37,6 +37,7 @@ public class Sp_RecipeController {
         Sp_recipe sp=m.map(s, Sp_recipe.class);
         sS.insert(sp);
     }
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @GetMapping
     public List<Sp_recipeDTO> list (){
         return sS.list().stream().map(y->{
