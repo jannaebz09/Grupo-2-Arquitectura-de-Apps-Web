@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 public class UserController {
     @Autowired
     private IUserService uS;
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @PostMapping
     public void registrar (@RequestBody UserDTO s) {
         ModelMapper m=new ModelMapper();
@@ -33,7 +34,7 @@ public class UserController {
         User us=m.map(s, User.class);
         uS.insert(us);
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @GetMapping
     public List<UserWithoutPasswordDTO> list(){
         return uS.list().stream().map(y->{

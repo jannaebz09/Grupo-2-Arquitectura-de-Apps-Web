@@ -33,6 +33,7 @@ public class ExpCertificateController {
         ExpCertificate ex=m.map(s,ExpCertificate.class);
         eS.insert(ex);
     }
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @GetMapping
     public List<ExpCertificateDTO> list(){
 

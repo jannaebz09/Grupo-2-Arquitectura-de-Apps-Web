@@ -20,14 +20,14 @@ import java.util.stream.Collectors;
 public class OptionPayController {
     @Autowired
     public IOptionPayService oS;
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @PostMapping
     public void registrar(@RequestBody OptionPayDTO s){
         ModelMapper m=new ModelMapper();
         OptionPay op=m.map(s, OptionPay.class);
         oS.insert(op);
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @PutMapping
     public void modificar(@RequestBody OptionPayDTO s){
         ModelMapper m=new ModelMapper();
@@ -41,7 +41,7 @@ public class OptionPayController {
             return m.map(y, OptionPayDTO.class);
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
     @DeleteMapping("/{id}")
     public void eliminacion(@PathVariable("id")Integer id){
         oS.delete(id);

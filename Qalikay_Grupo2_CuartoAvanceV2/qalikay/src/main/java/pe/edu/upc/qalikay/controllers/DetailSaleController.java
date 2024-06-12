@@ -22,19 +22,21 @@ public class DetailSaleController {
 
     @Autowired
     public IDetailSaleService dS;
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @PostMapping
     public void registrar(@RequestBody DetailSaleWithoutSubtotalDTO s){
         ModelMapper m=new ModelMapper();
         DetailSale de=m.map(s, DetailSale.class);
         dS.insert(de);
     }
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @PutMapping
     public void modificar(@RequestBody DetailSaleWithoutSubtotalDTO s){
         ModelMapper m=new ModelMapper();
         DetailSale de=m.map(s, DetailSale.class);
         dS.insert(de);
     }
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @GetMapping
     public List<DetailSaleDTO> list (){
         return dS.list().stream().map(y->{
@@ -42,7 +44,7 @@ public class DetailSaleController {
             return m.map(y, DetailSaleDTO.class);
         }).collect(Collectors.toList());
     }
-
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @DeleteMapping("/{id}")
     public void eliminacionDetalleVenta(@PathVariable("id")Integer id){
         dS.delete(id);

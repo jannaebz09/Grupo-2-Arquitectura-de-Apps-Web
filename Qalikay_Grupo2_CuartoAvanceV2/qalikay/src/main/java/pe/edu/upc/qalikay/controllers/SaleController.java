@@ -28,20 +28,21 @@ public class SaleController {
 
     @Autowired
     public ISaleService sS;
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @PostMapping
     public void registrar(@RequestBody SaleWithoutTotalDTO s){
         ModelMapper m=new ModelMapper();
         Sale sa=m.map(s, Sale.class);
         sS.insert(sa);
     }
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @PutMapping
     public void modificar(@RequestBody SaleWithoutTotalDTO s){
         ModelMapper m=new ModelMapper();
         Sale sa=m.map(s, Sale.class);
         sS.insert(sa);
     }
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @GetMapping
     public List<SaleDTO> list (){
         return sS.list().stream().map(y->{
@@ -49,7 +50,7 @@ public class SaleController {
             return m.map(y, SaleDTO.class);
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @DeleteMapping("/{id}")
     public void eliminacion(@PathVariable("id")Integer id){
         sS.delete(id);

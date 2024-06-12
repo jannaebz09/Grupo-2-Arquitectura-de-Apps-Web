@@ -3,14 +3,16 @@ package pe.edu.upc.qalikay.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "Role", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id","rol"})})
-public class Role {
+public class Role implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idRole;
+    private Long idRole;
     @Column(name = "descriptionRole", nullable = false, length = 50)
     private String descriptionRole;
     @ManyToOne
@@ -20,17 +22,17 @@ public class Role {
 
     }
 
-    public Role(int idRole, String descriptionRole, User user) {
+    public Role(Long idRole, String descriptionRole, User user) {
         this.idRole = idRole;
         this.descriptionRole = descriptionRole;
         this.user = user;
     }
 
-    public int getIdRole() {
+    public Long getIdRole() {
         return idRole;
     }
 
-    public void setIdRole(int idRole) {
+    public void setIdRole(Long idRole) {
         this.idRole = idRole;
     }
 

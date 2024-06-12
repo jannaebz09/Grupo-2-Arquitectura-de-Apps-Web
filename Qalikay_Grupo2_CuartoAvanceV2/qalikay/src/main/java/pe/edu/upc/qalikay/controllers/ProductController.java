@@ -34,6 +34,7 @@ public class ProductController {
         Product pr=m.map(s, Product.class);
         pS.insert(pr);
     }
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @GetMapping
     public List<ProductDTO> list (){
         return pS.list().stream().map(y->{
