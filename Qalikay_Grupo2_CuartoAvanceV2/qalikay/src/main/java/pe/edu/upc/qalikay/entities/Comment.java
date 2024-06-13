@@ -11,8 +11,6 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idComment;
-    @Column(name="userType",nullable = false,length = 10)
-    private String userType;
     @Column(name="textComment",nullable = false)
     private String textComment;
     @Column(name="dateComment",nullable = false)
@@ -29,9 +27,8 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(int idComment, String userType, String textComment, LocalDate dateComment, int qualification, User user, Sp_recipe spRecipe) {
+    public Comment(int idComment, String textComment, LocalDate dateComment, int qualification, User user, Sp_recipe spRecipe) {
         this.idComment = idComment;
-        this.userType = userType;
         this.textComment = textComment;
         this.dateComment = dateComment;
         this.qualification = qualification;
@@ -45,14 +42,6 @@ public class Comment {
 
     public void setIdComment(int idComment) {
         this.idComment = idComment;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
     }
 
     public String getTextComment() {
