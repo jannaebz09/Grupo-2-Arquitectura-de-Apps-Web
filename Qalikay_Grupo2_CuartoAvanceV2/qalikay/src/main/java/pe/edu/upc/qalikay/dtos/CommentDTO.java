@@ -8,7 +8,6 @@ import java.time.LocalDate;
 
 public class CommentDTO {
     private int idComment;
-    private String userType;
     private String textComment;
     private LocalDate dateComment;
     private int qualification;
@@ -21,14 +20,6 @@ public class CommentDTO {
 
     public void setIdComment(int idComment) {
         this.idComment = idComment;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
     }
 
     public String getTextComment() {

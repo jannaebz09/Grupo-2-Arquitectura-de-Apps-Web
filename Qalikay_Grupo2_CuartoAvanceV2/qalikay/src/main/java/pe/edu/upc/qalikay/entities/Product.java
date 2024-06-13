@@ -22,12 +22,12 @@ public class Product {
     private double amountProduct;
 
     @Column(name = "rucProduct", nullable = false, length = 50)
-    private int rucProduct;
+    private Long rucProduct;
 
     public Product() {
     }
 
-    public Product(int idProduct, String nameProduct, String descriptionProduct, String preparationProduct, double amountProduct, int rucProduct) {
+    public Product(int idProduct, String nameProduct, String descriptionProduct, String preparationProduct, double amountProduct, Long rucProduct) {
         this.idProduct = idProduct;
         this.nameProduct = nameProduct;
         this.descriptionProduct = descriptionProduct;
@@ -76,11 +76,11 @@ public class Product {
         this.amountProduct = amountProduct;
     }
 
-    public int getRucProduct() {
+    public Long getRucProduct() {
         return rucProduct;
     }
 
-    public void setRucProduct(int rucProduct) {
+    public void setRucProduct(Long rucProduct) {
         this.rucProduct = rucProduct;
     }
 }
