@@ -7,7 +7,7 @@ public class ProductDTO {
     private String descriptionProduct;
     private String preparationProduct;
     private int amountProduct;
-    private int rucProduct;
+    private Long rucProduct;
 
     public int getIdProduct() {
         return idProduct;
@@ -49,11 +49,11 @@ public class ProductDTO {
         this.amountProduct = amountProduct;
     }
 
-    public int getRucProduct() {
+    public Long getRucProduct() {
         return rucProduct;
     }
 
-    public void setRucProduct(int rucProduct) {
+    public void setRucProduct(Long rucProduct) {
         this.rucProduct = rucProduct;
     }
 }
