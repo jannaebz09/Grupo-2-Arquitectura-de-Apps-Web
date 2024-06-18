@@ -32,14 +32,14 @@ public class UserController {
         us.setPassword(encodedPassword);
         uS.insert(us);
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+
     @PutMapping
     public void modificar (@RequestBody UserDTO s) {
         ModelMapper m=new ModelMapper();
         User us=m.map(s, User.class);
         uS.insert(us);
     }
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
+
     @GetMapping
     public List<UserWithoutPasswordDTO> list(){
         return uS.list().stream().map(y->{
