@@ -20,21 +20,19 @@ import java.util.stream.Collectors;
 public class RoleController {
     @Autowired
     public IRoleService rS;
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
     @PostMapping
     public void registrarRole(@RequestBody RoleDTO role){
         ModelMapper m=new ModelMapper();
         Role ro=m.map(role, Role.class);
         rS.insert(ro);
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+
     @PutMapping
     public void modificar(@RequestBody RoleDTO role){
         ModelMapper m=new ModelMapper();
         Role ro=m.map(role, Role.class);
         rS.insert(ro);
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public List<RoleDTO> listRole (){
         return rS.list().stream().map(y->{
