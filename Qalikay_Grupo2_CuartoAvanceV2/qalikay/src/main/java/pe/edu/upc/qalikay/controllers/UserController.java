@@ -4,6 +4,7 @@ package pe.edu.upc.qalikay.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.qalikay.dtos.UserDTO;
 import pe.edu.upc.qalikay.dtos.UserWithoutPasswordDTO;
@@ -20,11 +21,15 @@ import java.util.stream.Collectors;
 public class UserController {
     @Autowired
     private IUserService uS;
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'EXPERTO','CLIENTE')")
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @PostMapping
-    public void registrar (@RequestBody UserDTO s) {
-        ModelMapper m=new ModelMapper();
-        User us=m.map(s, User.class);
+    public void registrar(@RequestBody UserDTO dto) {
+        ModelMapper m = new ModelMapper();
+        User us = m.map(dto, User.class);
+        String encodedPassword = passwordEncoder.encode(us.getPassword());
+        us.setPassword(encodedPassword);
         uS.insert(us);
     }
     @PreAuthorize("hasAuthority('ADMIN')")
