@@ -30,4 +30,9 @@ public class UserServiceImplement implements IUserService {
     public User listId(int id) {
         return uR.findById(id).orElse(new User());
     }
+
+    @Override
+    public User findByUserName(String username) {
+        return uR.findByUserName(username);
+    }
 }

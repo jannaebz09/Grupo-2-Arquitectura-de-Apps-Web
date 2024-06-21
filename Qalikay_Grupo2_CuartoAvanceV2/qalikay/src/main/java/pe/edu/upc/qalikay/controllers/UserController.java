@@ -37,8 +37,18 @@ public class UserController {
     public void modificar (@RequestBody UserDTO s) {
         ModelMapper m=new ModelMapper();
         User us=m.map(s, User.class);
+        String encodedPassword = passwordEncoder.encode(us.getPassword());
+        us.setPassword(encodedPassword);
         uS.insert(us);
     }
+    @GetMapping("/nombreusuario")
+    public User encontraruser(@RequestParam String nombreuser){
+        ModelMapper m = new ModelMapper();
+        User dto = m.map(uS.findByUserName(nombreuser), User.class);
+        return dto;
+    }
+
+
 
     @GetMapping
     public List<UserWithoutPasswordDTO> list(){
