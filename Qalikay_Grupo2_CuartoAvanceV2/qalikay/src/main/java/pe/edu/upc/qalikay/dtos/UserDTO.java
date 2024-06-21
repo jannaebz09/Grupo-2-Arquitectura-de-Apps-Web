@@ -10,7 +10,6 @@ public class UserDTO {
     private String password;
     private Boolean enabled;
     private String symptoms;
-    private Boolean verificationExpert;
     private int dni;
 
     public int getIdUser() {
@@ -59,14 +58,6 @@ public class UserDTO {
 
     public void setSymptoms(String symptoms) {
         this.symptoms = symptoms;
-    }
-
-    public Boolean getVerificationExpert() {
-        return verificationExpert;
-    }
-
-    public void setVerificationExpert(Boolean verificationExpert) {
-        this.verificationExpert = verificationExpert;
     }
 
     public int getDni() {

@@ -26,8 +26,6 @@ public class User implements Serializable {
     private Boolean enabled;
     @Column(name = "symptoms", nullable = false, length = 200)
     private String symptoms;
-    @Column(name = "verficationExpert", nullable = false)
-    private Boolean verificationExpert;
     @Column(name = "dni", nullable = false)
     private int dni;
     @JsonIgnore
@@ -37,7 +35,7 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(Long idUser, String userName, String fullName, String email, String password, Boolean enabled, String symptoms, Boolean verificationExpert, int dni, List<Role> roles) {
+    public User(Long idUser, String userName, String fullName, String email, String password, Boolean enabled, String symptoms, int dni, List<Role> roles) {
         this.idUser = idUser;
         this.userName = userName;
         this.fullName = fullName;
@@ -45,7 +43,6 @@ public class User implements Serializable {
         this.password = password;
         this.enabled = enabled;
         this.symptoms = symptoms;
-        this.verificationExpert = verificationExpert;
         this.dni = dni;
         this.roles = roles;
     }
@@ -104,14 +101,6 @@ public class User implements Serializable {
 
     public void setSymptoms(String symptoms) {
         this.symptoms = symptoms;
-    }
-
-    public Boolean getVerificationExpert() {
-        return verificationExpert;
-    }
-
-    public void setVerificationExpert(Boolean verificationExpert) {
-        this.verificationExpert = verificationExpert;
     }
 
     public int getDni() {
