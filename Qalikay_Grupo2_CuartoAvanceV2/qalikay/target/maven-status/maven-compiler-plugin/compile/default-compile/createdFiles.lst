@@ -19,6 +19,8 @@ pe\edu\upc\qalikay\servicesimplements\UserServiceImplement.class
 pe\edu\upc\qalikay\dtos\TopUsersWithMostSalesDTO.class
 pe\edu\upc\qalikay\dtos\ProductDTO.class
 pe\edu\upc\qalikay\servicesinterfaces\IOptionPayService.class
+pe\edu\upc\qalikay\dtos\UserWithoutPasswordDTO.class
+pe\edu\upc\qalikay\util\CORS.class
 pe\edu\upc\qalikay\servicesinterfaces\IProductService.class
 pe\edu\upc\qalikay\controllers\JwtAuthenticationController.class
 pe\edu\upc\qalikay\controllers\ProductController.class
@@ -45,6 +47,8 @@ pe\edu\upc\qalikay\repositories\ISp_recipeRepository.class
 pe\edu\upc\qalikay\controllers\SaleController.class
 pe\edu\upc\qalikay\servicesinterfaces\ISaleService.class
 pe\edu\upc\qalikay\servicesimplements\OptionPayServiceImplement.class
+pe\edu\upc\qalikay\dtos\SaleWithoutTotalDTO.class
+pe\edu\upc\qalikay\dtos\DetailSaleWithoutSubtotalDTO.class
 pe\edu\upc\qalikay\servicesinterfaces\ICommentService.class
 pe\edu\upc\qalikay\controllers\Sp_RecipeController.class
 pe\edu\upc\qalikay\entities\Role.class

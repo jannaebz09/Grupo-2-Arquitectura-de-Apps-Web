@@ -35,6 +35,7 @@ C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoA
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\controllers\ExpCertificateController.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\entities\DetailSale.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\dtos\OrderByQualificationAverageDTO.java
+C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\util\CORS.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\securities\JwtRequest.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\securities\JwtTokenUtil.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\dtos\DetailSaleDTO.java
@@ -44,11 +45,13 @@ C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoA
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\securities\OpenAPI30Configuration.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\entities\ExpCertificate.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\securities\WebSecurityConfig.java
+C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\dtos\UserWithoutPasswordDTO.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\dtos\QualificationAverageByUserDTO.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\servicesinterfaces\ISaleService.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\controllers\UserController.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\dtos\CommentDTO.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\controllers\RoleController.java
+C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\dtos\DetailSaleWithoutSubtotalDTO.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\dtos\ProductDTO.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\servicesinterfaces\IProductService.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\repositories\ISaleRepository.java
@@ -67,3 +70,4 @@ C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoA
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\repositories\IExpCertificateRepository.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\securities\JwtResponse.java
 C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\servicesimplements\ExpCertificateServiceImplement.java
+C:\Users\gian_\Documents\Grupo-2-Arquitectura-de-Apps-Web\Qalikay_Grupo2_CuartoAvanceV2\qalikay\src\main\java\pe\edu\upc\qalikay\dtos\SaleWithoutTotalDTO.java
