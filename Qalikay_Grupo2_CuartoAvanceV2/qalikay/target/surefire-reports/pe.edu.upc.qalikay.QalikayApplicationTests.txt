@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: pe.edu.upc.qalikay.QalikayApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.15 s -- in pe.edu.upc.qalikay.QalikayApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.25 s -- in pe.edu.upc.qalikay.QalikayApplicationTests
